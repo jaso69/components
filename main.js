@@ -9,6 +9,8 @@ import {  colors,
           fontsize,
         } from './constantes'
 
+const body = document.querySelector('body')
+const theme = document.querySelector('#theme')
 const colores = document.querySelector('#colores')
 const bgs = document.querySelector('#bg') 
 const padd = document.querySelector('#padding')
@@ -20,6 +22,7 @@ const brd_o = document.querySelector('#brd-o')
 const font = document.querySelector('#font')
 const boton = document.querySelector('#boton')
 
+let dark = true;
 let color_save;
 let bg_save;
 let padding_save;
@@ -214,3 +217,20 @@ brd_r.addEventListener('change', () => {change_brd_r(brd_r.value)})
 brd_s.addEventListener('change', () => {change_brd_s(brd_s.value)})
 brd_o.addEventListener('change', () => {change_brd_o(brd_o.value)})
 font.addEventListener('change', (e) => {change_font(font.value)})
+
+
+// theme.addEventListener('click', () => {
+//   dark = !dark
+//   if(dark){
+//     body.classList.remove('bg-[#333]')
+//     body.classList.remove('text-white')
+//     body.classList.add('bg-[#eee]')
+//     body.classList.add('text-black')
+//   } else {
+//     body.classList.remove('bg-[#eee]')
+//     body.classList.remove('text-black')
+//     body.classList.add('bg-[#333]')
+//     body.classList.add('text-white')
+//   }
+
+// })
