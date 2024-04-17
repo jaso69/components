@@ -27,9 +27,9 @@ Esto iniciará un servidor de desarrollo en **localhost:5173**. Desde aquí, pod
 Si deseas contribuir a este proyecto, sigue estos pasos:
 
 Haz un fork del repositorio.
-Crea una nueva rama (git checkout -b feature/Nombre).
-Realiza tus cambios y haz commit (git commit -am 'Agrega una nueva característica').
-Sube tus cambios (git push origin feature/Nombre).
+Crea una nueva rama (git checkout -b feature/Nombre).<br>
+Realiza tus cambios y haz commit (git commit -am 'Agrega una nueva característica').<br>
+Sube tus cambios (git push origin feature/Nombre).<br>
 Abre un Pull Request.
 **Licencia**
 Este proyecto está bajo la Licencia [GNU]. Consulta el archivo LICENSE para obtener más detalles.
