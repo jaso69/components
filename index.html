@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>JaWeB Components</title>
+  </head>
+  <body class="bg-[#333]">
+    <header class="flex w-100 h-100 justify-center">
+      <h1 class="text-red-500 text-2xl p-4">
+        Generador de componentes
+      </h1>
+    </header>
+    <main class="flex flex-col w-100 h-100 justify-center content-center gap-6">
+
+      <div class="flex flex-wrap gap-4 justify-center">
+
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2">
+            <label for="font" class="text-white text-center">Font Size</label>
+            <select name="font_save" id="font"></select>
+          </div>
+        </section>
+        
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2">
+            <label for="colores" class="text-white text-center">Text Color</label>
+            <select name="colores" id="colores"></select>
+          </div>
+        </section>
+        
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2">
+            <label for="bg" class="text-white text-center">Background Color</label>
+            <select name="bg" id="bg"></select>
+          </div>
+        </section>
+        
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2">
+            <label for="padding" class="text-white text-center">Padding</label>
+            <select name="padding" id="padding"></select>
+          </div>
+        </section>
+        
+      </div>
+      
+      <div class="flex flex-wrap gap-4 justify-center">
+
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2">
+            <label for="brd-w" class="text-white text-center">Border Width</label>
+            <select name="brd-w" id="brd-w"></select>
+          </div>
+        </section>
+
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2">
+            <label for="brd-c" class="text-white text-center">Border Color</label>
+            <select name="brd-c" id="brd-c"></select>
+          </div>
+        </section>
+
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2">
+            <label for="brd-r" class="text-white text-center">Border Radius</label>
+            <select name="brd-r" id="brd-r"></select>
+          </div>
+        </section>
+
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2">
+            <label for="brd-s" class="text-white text-center">Border Style</label>
+            <select name="brd-s" id="brd-s"></select>
+          </div>
+        </section>
+
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2">
+            <label for="brd-o" class="text-white text-center">Border Opacity</label>
+            <select name="brd-o" id="brd-o"></select>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="flex justify-center content-center">
+        <button id="boton">
+          Texto
+        </button>
+      </div>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
