@@ -10,6 +10,9 @@ import {  clases_el,
           fontsize,
           decoration,
           shadows,
+          text_aligns,
+          widths,
+          heights,
         } from './constantes'
 
 const clases = []
@@ -30,6 +33,9 @@ const brd_o = document.querySelector('#brd-o')
 const font = document.querySelector('#font')
 const t_decoration = document.querySelector('#decoration')
 const shadow = document.querySelector('#shadow')
+const text_align = document.querySelector('#text_align')
+const width = document.querySelector('#widths')
+const height = document.querySelector('#heights')
 const boton = document.querySelector('#boton')
 
 let dark = true;
@@ -46,6 +52,18 @@ const op = (color, c_border) =>{
   }
   return opcion
 }
+
+heights.forEach(color => {
+  height.add(op(color))
+})
+
+widths.forEach(color => {
+  width.add(op(color))
+})
+
+text_aligns.forEach(color => {
+  text_align.add(op(color))
+})
 
 shadows.forEach(color => {
   shadow.add(op(color))
@@ -112,6 +130,9 @@ brd_o.addEventListener('change', () => {change(brd_o.value, 'border_opacity')})
 font.addEventListener('change', () => {change(font.value, 'fontsize')})
 t_decoration.addEventListener('change', () => {change(t_decoration.value, 'decoration')})
 shadow.addEventListener('change', () => {change(shadow.value, 'shadows')})
+text_align.addEventListener('change', () => {change(text_align.value, 'text_aligns')})
+width.addEventListener('change', () => {change(width.value, 'widths')})
+height.addEventListener('change', () => {change(height.value, 'heights')})
 
 // theme.addEventListener('click', () => {
 //   dark = !dark
