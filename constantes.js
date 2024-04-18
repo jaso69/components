@@ -1,3 +1,37 @@
+export const clases_el = [
+    'colors',
+    'bg',
+    'padding', 
+    'border_width', 
+    'border_color', 
+    'border_radius', 
+    'border_style', 
+    'border_opacity',
+    'fontsize',
+    'decoration',
+    'shadows'
+]
+
+export const shadows = [
+    'shadow-xs',
+    'shadow-sm',
+    'shadow', 
+    'shadow-md', 
+    'shadow-lg', 
+    'shadow-xl', 
+    'shadow-2xl', 
+    'shadow-inner',
+    'shadow-outline',
+    'shadow-none',
+]
+
+export const decoration = [
+    'underline',
+    'overline',
+    'line-through', 
+    'no-underline', 
+]
+
 export const colors = [
     'text-inherit',
     'text-current',

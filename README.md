@@ -38,5 +38,3 @@ Este proyecto está bajo la Licencia [GNU]. Consulta el archivo LICENSE para obt
 Para preguntas o comentarios, contáctame en [info@jaweb.es].
 **https://jaweb.es**
 
-
-

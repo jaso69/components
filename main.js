@@ -1,4 +1,5 @@
-import {  colors,
+import {  clases_el,
+          colors,
           bg,
           padding, 
           border_width, 
@@ -7,7 +8,14 @@ import {  colors,
           border_style, 
           border_opacity,
           fontsize,
+          decoration,
+          shadows,
         } from './constantes'
+
+const clases = []
+clases_el.forEach((el) => {
+  clases.push({el:el,clase:null})
+})
 
 const body = document.querySelector('body')
 const theme = document.querySelector('#theme')
@@ -20,204 +28,90 @@ const brd_r = document.querySelector('#brd-r')
 const brd_s = document.querySelector('#brd-s') 
 const brd_o = document.querySelector('#brd-o')
 const font = document.querySelector('#font')
+const t_decoration = document.querySelector('#decoration')
+const shadow = document.querySelector('#shadow')
 const boton = document.querySelector('#boton')
 
 let dark = true;
-let color_save;
-let bg_save;
-let padding_save;
-let brd_w_save;
-let brd_c_save;
-let brd_r_save;
-let brd_s_save;
-let brd_o_save;
-let font_save;
 
-const clases = []
-
-fontsize.forEach(color => {
+const op = (color, c_border) =>{
   const opcion = document.createElement("option");
   opcion.text = color;
   opcion.value = color;
-  opcion.classList.add(color)
-  font.add(opcion)
+  if(c_border) {
+    const newColor = color.replace('border', 'bg')
+    opcion.classList.add(newColor)
+  } else {
+    opcion.classList.add(color)
+  }
+  return opcion
+}
+
+shadows.forEach(color => {
+  shadow.add(op(color))
+})
+
+decoration.forEach(color => {
+  t_decoration.add(op(color))
+})
+
+fontsize.forEach(color => {
+  font.add(op(color))
 })
 
 border_opacity.forEach(color => {
-  const opcion = document.createElement("option");
-  opcion.text = color;
-  opcion.value = color;
-  opcion.classList.add(color)
-  brd_o.add(opcion)
+  brd_o.add(op(color))
 })
 
 border_style.forEach(color => {
-  const opcion = document.createElement("option");
-  opcion.text = color;
-  opcion.value = color;
-  opcion.classList.add(color)
-  brd_s.add(opcion)
+  brd_s.add(op(color))
 })
 
 border_radius.forEach(color => {
-  const opcion = document.createElement("option");
-  opcion.text = color;
-  opcion.value = color;
-  opcion.classList.add(color)
-  brd_r.add(opcion)
+  brd_r.add(op(color))
 })
 
 border_color.forEach(color => {
-  const opcion = document.createElement("option");
-  opcion.text = color;
-  opcion.value = color;
-  opcion.classList.add(color.replace('border', 'bg'))
-  brd_c.add(opcion)
+  brd_c.add(op(color, true))
 })
 
 border_width.forEach(color => {
-  const opcion = document.createElement("option");
-  opcion.text = color;
-  opcion.value = color;
-  opcion.classList.add(color)
-  brd_w.add(opcion)
+  brd_w.add(op(color))
 })
 
 padding.forEach(color => {
-  const opcion = document.createElement("option");
-  opcion.text = color;
-  opcion.value = color;
-  opcion.classList.add(color)
-  padd.add(opcion)
+  padd.add(op(color))
 })
 
 colors.forEach(color => {
-  const opcion = document.createElement("option");
-  opcion.text = color;
-  opcion.value = color;
-  opcion.classList.add(color)
-  colores.add(opcion)
+  colores.add(op(color))
 })
 
 bg.forEach(color => {
-  const opcion = document.createElement("option");
-  opcion.text = color;
-  opcion.value = color;
-  opcion.classList.add(color)
-  bgs.add(opcion)
+  bgs.add(op(color))
 })
 
-const change_color = (color) => {
-  boton.classList.remove('inherit')
-  if(color_save){
-    boton.classList.remove(color_save)
-    color_save = color
-    boton.classList.add(color_save)
-  } else {
-    color_save = color
-    boton.classList.add(color_save)
-  }
+const change = (color, e) => {
+  clases.forEach(clase => {
+    if(clase['el'] === e) {
+      if (clase['clase']) boton.classList.remove(clase['clase'])
+      clase['clase'] = color
+      boton.classList.add(clase['clase'])
+    }
+  })
 }
 
-const change_bg = (color) => {
-  if(bg_save){
-    boton.classList.remove(bg_save)
-    bg_save = color
-    boton.classList.add(bg_save)
-  } else {
-    bg_save = color
-    boton.classList.add(bg_save)
-  }
-}
-
-const change_padd = (color) => {
-  if(padding_save){
-    boton.classList.remove(padding_save)
-    padding_save = color
-    boton.classList.add(padding_save)
-  } else {
-    padding_save = color
-    boton.classList.add(padding_save)
-  }
-}
-
-const change_brd_w = (color) => {
-  if(brd_w_save){
-    boton.classList.remove(brd_w_save)
-    brd_w_save = color
-    boton.classList.add(brd_w_save)
-  } else {
-    brd_w_save = color
-    boton.classList.add(brd_w_save)
-  }
-}
-
-const change_brd_c = (color) => {
-  if(brd_c_save){
-    boton.classList.remove(brd_c_save)
-    brd_c_save = color
-    boton.classList.add(brd_c_save)
-  } else {
-    brd_c_save = color
-    boton.classList.add(brd_c_save)
-  }
-}
-
-const change_brd_r = (color) => {
-  if(brd_r_save){
-    boton.classList.remove(brd_r_save)
-    brd_r_save = color
-    boton.classList.add(brd_r_save)
-  } else {
-    brd_r_save = color
-    boton.classList.add(brd_r_save)
-  }
-}
-
-const change_brd_s = (color) => {
-  if(brd_s_save){
-    boton.classList.remove(brd_s_save)
-    brd_s_save = color
-    boton.classList.add(brd_s_save)
-  } else {
-    brd_s_save = color
-    boton.classList.add(brd_s_save)
-  }
-}
-
-const change_brd_o = (color) => {
-  if(brd_o_save){
-    boton.classList.remove(brd_o_save)
-    brd_o_save = color
-    boton.classList.add(brd_o_save)
-  } else {
-    brd_o_save = color
-    boton.classList.add(brd_o_save)
-  }
-}
-
-const change_font = (color) => {
-  if(font_save){
-    boton.classList.remove(font_save)
-    font_save = color
-    boton.classList.add(font_save)
-  } else {
-    font_save = color
-    boton.classList.add(font_save)
-  }
-}
-
-
-colores.addEventListener('change', () => change_color(colores.value))
-bgs.addEventListener('change', () => {change_bg(bgs.value)})
-padd.addEventListener('change', () => {change_padd(padd.value)})
-brd_w.addEventListener('change', () => {change_brd_w(brd_w.value)})
-brd_c.addEventListener('change', () => {change_brd_c(brd_c.value)})
-brd_r.addEventListener('change', () => {change_brd_r(brd_r.value)})
-brd_s.addEventListener('change', () => {change_brd_s(brd_s.value)})
-brd_o.addEventListener('change', () => {change_brd_o(brd_o.value)})
-font.addEventListener('change', (e) => {change_font(font.value)})
-
+colores.addEventListener('change', () => change(colores.value, 'colors'))
+bgs.addEventListener('change', () => {change(bgs.value, 'bg')})
+padd.addEventListener('change', () => {change(padd.value, 'padding')})
+brd_w.addEventListener('change', () => {change(brd_w.value, 'border_width')})
+brd_c.addEventListener('change', () => {change(brd_c.value, 'border_color')})
+brd_r.addEventListener('change', () => {change(brd_r.value, 'border_radius')})
+brd_s.addEventListener('change', () => {change(brd_s.value, 'border_style')})
+brd_o.addEventListener('change', () => {change(brd_o.value, 'border_opacity')})
+font.addEventListener('change', () => {change(font.value, 'fontsize')})
+t_decoration.addEventListener('change', () => {change(t_decoration.value, 'decoration')})
+shadow.addEventListener('change', () => {change(shadow.value, 'shadows')})
 
 // theme.addEventListener('click', () => {
 //   dark = !dark
