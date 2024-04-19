@@ -13,6 +13,14 @@ import {  clases_el,
           text_aligns,
           widths,
           heights,
+          scales,
+          rotates,
+          translates,
+          brightness,
+          contrasts,
+          blurs,
+          hues,
+          weights,
         } from './constantes'
 
 const clases = []
@@ -36,6 +44,14 @@ const shadow = document.querySelector('#shadow')
 const text_align = document.querySelector('#text_align')
 const width = document.querySelector('#widths')
 const height = document.querySelector('#heights')
+const scale = document.querySelector('#scales')
+const rotate = document.querySelector('#rotates')
+const translate = document.querySelector('#translates')
+const brightnes = document.querySelector('#brightness')
+const contrast = document.querySelector('#contrasts')
+const blur = document.querySelector('#blurs')
+const hue = document.querySelector('#hues')
+const weight = document.querySelector('#weights')
 const boton = document.querySelector('#boton')
 
 let dark = true;
@@ -45,13 +61,45 @@ const op = (color, c_border) =>{
   opcion.text = color;
   opcion.value = color;
   if(c_border) {
-    const newColor = color.replace('border', 'bg')
-    opcion.classList.add(newColor)
+    if (color.startsWith('text')) {const txtColor = color.replace('text', 'bg'); opcion.classList.add(txtColor)}
+    if (color.startsWith('border')) {const newColor = color.replace('border', 'bg'); opcion.classList.add(newColor)} 
   } else {
     opcion.classList.add(color)
   }
   return opcion
 }
+
+weights.forEach(color => {
+  weight.add(op(color))
+})
+
+hues.forEach(color => {
+  hue.add(op(color))
+})
+
+blurs.forEach(color => {
+  blur.add(op(color))
+})
+
+contrasts.forEach(color => {
+  contrast.add(op(color))
+})
+
+brightness.forEach(color => {
+  brightnes.add(op(color))
+})
+
+translates.forEach(color => {
+  translate.add(op(color))
+})
+
+rotates.forEach(color => {
+  rotate.add(op(color))
+})
+
+scales.forEach(color => {
+  scale.add(op(color))
+})
 
 heights.forEach(color => {
   height.add(op(color))
@@ -102,7 +150,7 @@ padding.forEach(color => {
 })
 
 colors.forEach(color => {
-  colores.add(op(color))
+  colores.add(op(color, true))
 })
 
 bg.forEach(color => {
@@ -133,19 +181,27 @@ shadow.addEventListener('change', () => {change(shadow.value, 'shadows')})
 text_align.addEventListener('change', () => {change(text_align.value, 'text_aligns')})
 width.addEventListener('change', () => {change(width.value, 'widths')})
 height.addEventListener('change', () => {change(height.value, 'heights')})
+scale.addEventListener('change', () => {change(scale.value, 'scales')})
+rotate.addEventListener('change', () => {change(rotate.value, 'rotates')})
+translate.addEventListener('change', () => {change(translate.value, 'translates')})
+brightnes.addEventListener('change', () => {change(brightnes.value, 'brightness')})
+contrast.addEventListener('change', () => {change(contrast.value, 'contrasts')})
+blur.addEventListener('change', () => {change(blur.value, 'blurs')})
+hue.addEventListener('change', () => {change(hue.value, 'hues')})
+weight.addEventListener('change', () => {change(weight.value, 'weights')})
 
-// theme.addEventListener('click', () => {
-//   dark = !dark
-//   if(dark){
-//     body.classList.remove('bg-[#333]')
-//     body.classList.remove('text-white')
-//     body.classList.add('bg-[#eee]')
-//     body.classList.add('text-black')
-//   } else {
-//     body.classList.remove('bg-[#eee]')
-//     body.classList.remove('text-black')
-//     body.classList.add('bg-[#333]')
-//     body.classList.add('text-white')
-//   }
+theme.addEventListener('click', () => {
+  dark = !dark
+  if(dark){
+    body.classList.remove('bg-[#333]')
+    //body.classList.remove('text-white')
+    body.classList.add('bg-[#eee]')
+    body.classList.add('text-black')
+  } else {
+    body.classList.remove('bg-[#eee]')
+    body.classList.remove('text-black')
+    body.classList.add('bg-[#333]')
+    //body.classList.add('text-white')
+  }
 
-// })
+})
