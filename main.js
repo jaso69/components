@@ -1,3 +1,4 @@
+import { Collapse } from 'flowbite'
 import {  clases_el,
           colors,
           bg,
@@ -30,6 +31,79 @@ clases_el.forEach((el) => {
   clases.push({el:el,clase:null})
 })
 
+/*** menu***************************************/
+
+const buttonEl = document.querySelector('#buttonEl')
+const aEl = document.querySelector('#aEl')
+const divEl = document.querySelector('#divEl')
+const imgEl = document.querySelector('#imgEl')
+const h1El = document.querySelector('#h1El')
+const h2El = document.querySelector('#h2El')
+const h3El = document.querySelector('#h3El')
+const pEl = document.querySelector('#pEl')
+const drop = document.querySelector('#drop')
+let boton = document.querySelector('#boton')
+const menuHtml = new Collapse(drop)
+
+drop.addEventListener('click', () => { menuHtml.expand()})
+
+buttonEl.addEventListener('click', () => {
+    drop.innerHTML = 'Button'
+    hidden('button', 'Button')
+})
+
+aEl.addEventListener('click', () => {
+    drop.innerHTML = 'Anchor'
+    hidden('a', 'a Element')
+})
+
+divEl.addEventListener('click', () => {
+    drop.innerHTML = 'Div'
+    hidden('div', 'Div Element')
+})
+
+imgEl.addEventListener('click', () => {
+    drop.innerHTML = 'Img'
+    hidden('img', 'img')
+})
+
+h1El.addEventListener('click', () => {
+    drop.innerHTML = 'H1'
+    hidden('h1', 'H1 Element')
+})
+
+h2El.addEventListener('click', () => {
+    drop.innerHTML = 'H2'
+    hidden('h2', 'H2 Element')
+})
+
+h3El.addEventListener('click', () => {
+    drop.innerHTML = 'H3'
+    hidden('h3', 'H3 Element')
+})
+
+pEl.addEventListener('click', () => {
+    drop.innerHTML = 'Paragraph'
+    hidden('p', 'Paragraph')
+})
+
+const hidden = (e, txt) => {
+  const newEl = document.createElement(e)
+  newEl.textContent = txt
+  newEl.id = "boton"
+  if(dark) {
+    newEl.classList.remove('text-black')
+    newEl.classList.add('text-white')
+  } else {
+    newEl.classList.remove('text-white')
+    newEl.classList.add('text-black')
+  }
+  boton.parentNode.replaceChild(newEl, boton)
+  boton = document.querySelector('#boton')
+}
+
+/********************************************** */
+
 const body = document.querySelector('body')
 const theme = document.querySelector('#theme')
 const colores = document.querySelector('#colores')
@@ -56,7 +130,7 @@ const hue = document.querySelector('#hues')
 const weight = document.querySelector('#weights')
 const opacity = document.querySelector('#opacitys')
 const cursor = document.querySelector('#cursors')
-const boton = document.querySelector('#boton')
+//const boton = document.querySelector('#boton')
 
 let dark = true;
 
@@ -205,17 +279,17 @@ opacity.addEventListener('change', () => {change(opacity.value, 'opacitys')})
 cursor.addEventListener('change', () => {change(cursor.value, 'cursors')})
 
 theme.addEventListener('click', () => {
-  dark = !dark
   if(dark){
-    body.classList.remove('bg-[#333]')
-    //body.classList.remove('text-white')
+    body.classList.remove('bg-gray-900')
+    boton.classList.remove('text-white')
     body.classList.add('bg-[#eee]')
-    body.classList.add('text-black')
+    boton.classList.add('text-black')
   } else {
     body.classList.remove('bg-[#eee]')
-    body.classList.remove('text-black')
-    body.classList.add('bg-[#333]')
-    //body.classList.add('text-white')
+    boton.classList.remove('text-black')
+    body.classList.add('bg-gray-900')
+    boton.classList.add('text-white')
   }
+  dark = !dark
 
 })
