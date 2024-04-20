@@ -21,6 +21,8 @@ import {  clases_el,
           blurs,
           hues,
           weights,
+          opacitys,
+          cursors,
         } from './constantes'
 
 const clases = []
@@ -52,6 +54,8 @@ const contrast = document.querySelector('#contrasts')
 const blur = document.querySelector('#blurs')
 const hue = document.querySelector('#hues')
 const weight = document.querySelector('#weights')
+const opacity = document.querySelector('#opacitys')
+const cursor = document.querySelector('#cursors')
 const boton = document.querySelector('#boton')
 
 let dark = true;
@@ -68,6 +72,14 @@ const op = (color, c_border) =>{
   }
   return opcion
 }
+
+cursors.forEach(color => {
+  cursor.add(op(color))
+})
+
+opacitys.forEach(color => {
+  opacity.add(op(color))
+})
 
 weights.forEach(color => {
   weight.add(op(color))
@@ -189,6 +201,8 @@ contrast.addEventListener('change', () => {change(contrast.value, 'contrasts')})
 blur.addEventListener('change', () => {change(blur.value, 'blurs')})
 hue.addEventListener('change', () => {change(hue.value, 'hues')})
 weight.addEventListener('change', () => {change(weight.value, 'weights')})
+opacity.addEventListener('change', () => {change(opacity.value, 'opacitys')})
+cursor.addEventListener('change', () => {change(cursor.value, 'cursors')})
 
 theme.addEventListener('click', () => {
   dark = !dark
