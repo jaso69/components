@@ -253,7 +253,10 @@ const change = (color, e) => {
   })
 }
 
-colores.addEventListener('change', () => change(colores.value, 'colors'))
+colores.addEventListener('change', () => {
+  dark ? boton.classList.remove('text-white') : boton.classList.remove('text-black')
+  change(colores.value, 'colors'); 
+})
 bgs.addEventListener('change', () => {change(bgs.value, 'bg')})
 padd.addEventListener('change', () => {change(padd.value, 'padding')})
 brd_w.addEventListener('change', () => {change(brd_w.value, 'border_width')})
