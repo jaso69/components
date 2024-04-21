@@ -21,11 +21,11 @@
   <body class="bg-gray-900">
     <header class="flex w-screen justify-center">
     
-      <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-screen">
+      <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 dark:bg-gray-800 w-screen">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+          <a href="https://jaweb.es" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="/favicon.svg" class="h-8" alt="Flowbite Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">JaWeB Components</span>
           </a>
           <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
@@ -47,60 +47,60 @@
                   </button>
                   <!-- Dropdown menu -->
                   <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                      <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                      <ul class="py-2 text-sm bg-gray-900 text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                         <li>
                           <button 
                           id="buttonEl" 
-                          class="block text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                          class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
                           button
                           </button>
                         </li>
                         <li>
                           <button 
                           id="aEl" 
-                          class="block text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                          class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
                           a
                           </button>
                         </li>
                         <li>
                           <button 
                           id="divEl" 
-                          class="block text-white px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                          class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
                           div
                           </button>
                         </li>
                         <li>
                           <button 
                           id="imgEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                           img
                           </button>
                         </li>
                         <li>
                           <button 
                           id="pEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                           p
                           </button>
                         </li>
                         <li>
                           <button 
                           id="h1El" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                           h1
                           </button>
                         </li>
                         <li>
                           <button 
                           id="h2El" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                           h2
                           </button>
                         </li>
                         <li>
                           <button 
                           id="h3El" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                           h3
                           </button>
                         </li>
@@ -108,8 +108,53 @@
                   </div>
               </li>
               <li>
-                <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-              </li>
+                <button id="dropStatus" data-dropdown-toggle="dropdownNavbar1" class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                  HTML Status 
+                  <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                    <ul class="py-2 text-sm bg-gray-900 text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                      <li>
+                        <button 
+                        id="defaultEl" 
+                        class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
+                        Default
+                        </button>
+                      </li>
+                      <li>
+                        <button 
+                        id="activeEl" 
+                        class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
+                        Active
+                        </button>
+                      </li>
+                      <li>
+                        <button 
+                        id="focusEl" 
+                        class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
+                        Focus
+                        </button>
+                      </li>
+                      <li>
+                        <button 
+                        id="hoverEl" 
+                        class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
+                        Hover
+                        </button>
+                      </li>
+                      <li>
+                        <button 
+                        id="visitedEl" 
+                        class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                        Visited
+                        </button>
+                      </li>
+                    </ul>
+                </div>
+            </li>
               <li>
                 <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
               </li>
@@ -120,8 +165,8 @@
           </div>
         </div>
       </nav>
-
-      <button id="theme" class="block py-2 px-3">
+      
+      <button id="theme" class="fixed right-0 bottom-0 py-2 px-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-up" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
           <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
@@ -319,13 +364,21 @@
         </section>
 
       </div>
-
-      <div class="flex justify-center content-center">
+      <div class="flex justify-center text-teal-500">
+        <p>Click on the created element to copy the code.</p>
+      </div>
+      <div id="rendered" class="flex justify-center content-center">
         <button id="boton" class="text-white">
           Texto
         </button>
       </div>
+      <div class="flex justify-center w-100 bg-slate-600 p-4 rounded-2xl border-2">
+        <code id="code" class="text-white"></code>
+      </div>
     </main>
+    <footer class="flex h-100 justify-center items-end mx-auto text-[#09f] p-6">
+      <p>JaWeB Components</p>
+    </footer>
     <script type="module" src="/main.js"></script>
     <!-- <script type="module" src="/menu.js"></script> -->
   </body>
