@@ -25,6 +25,9 @@ import {  clases_el,
           opacitys,
           cursors,
           statuss,
+          rules,
+          q_status,
+          txtButton,
         } from './constantes'
 
 const clases = []
@@ -44,28 +47,28 @@ const visitedEl = document.querySelector('#visitedEl')
 const dropStatus = document.querySelector('#dropStatus')
 
 defaultEl.addEventListener('click', () => {
-  dropStatus.innerHTML = 'Default'
-  status = 'default'
+  dropStatus.innerHTML = q_status[0]
+  status = q_status[0]
 })
 
 activeEl.addEventListener('click', () => {
-  dropStatus.innerHTML = 'Active'
-  status = 'active'
+  dropStatus.innerHTML = q_status[1]
+  status = q_status[1]
 })
 
 focusEl.addEventListener('click', () => {
-  dropStatus.innerHTML = 'Focus'
-  status = 'focus'
+  dropStatus.innerHTML = q_status[2]
+  status = q_status[2]
 })
 
 hoverEl.addEventListener('click', () => {
-  dropStatus.innerHTML = 'Hover'
-  status = 'hover'
+  dropStatus.innerHTML = q_status[3]
+  status = q_status[3]
 })
 
 visitedEl.addEventListener('click', () => {
-  dropStatus.innerHTML = 'Visited'
-  status = 'visited'
+  dropStatus.innerHTML = q_status[4]
+  status = q_status[4]
 })
 
 
@@ -88,49 +91,49 @@ drop.addEventListener('click', () => { menuHtml.expand()})
 buttonEl.addEventListener('click', () => {
     drop.innerHTML = 'Button'
     element = 'button'
-    hidden('button', 'Button')
+    hidden('button', txtButton)
 })
 
 aEl.addEventListener('click', () => {
     drop.innerHTML = 'Anchor'
     element = 'a'
-    hidden('a', 'a Element')
+    hidden('a', txtButton)
 })
 
 divEl.addEventListener('click', () => {
     drop.innerHTML = 'Div'
     element = 'div'
-    hidden('div', 'Div Element')
+    hidden('div', txtButton)
 })
 
 imgEl.addEventListener('click', () => {
     drop.innerHTML = 'Img'
     element = 'img'
-    hidden('img', 'img')
+    hidden('img', txtButton)
 })
 
 h1El.addEventListener('click', () => {
     drop.innerHTML = 'H1'
     element = 'h1'
-    hidden('h1', 'H1 Element')
+    hidden('h1', txtButton)
 })
 
 h2El.addEventListener('click', () => {
     drop.innerHTML = 'H2'
     element = 'h2'  
-    hidden('h2', 'H2 Element')
+    hidden('h2', txtButton)
 })
 
 h3El.addEventListener('click', () => {
     drop.innerHTML = 'H3'
     element = 'h3'
-    hidden('h3', 'H3 Element')
+    hidden('h3', txtButton)
 })
 
 pEl.addEventListener('click', () => {
     drop.innerHTML = 'Paragraph'
     element = 'p'
-    hidden('p', 'Paragraph')
+    hidden('p', txtButton)
 })
 
 const hidden = (e, txt) => {
@@ -295,11 +298,11 @@ bg.forEach(color => {
 
 const change = (color, e, select) => {
   let statusClass;
-  if(status === 'default') statusClass = color
-  if(status === 'active') {statusClass = statuss[0] + color; select = 'active'}
-  if(status === 'focus') {statusClass = statuss[1] + color; select = 'focus'}
-  if(status === 'hover') {statusClass = statuss[2] + color; select = 'hover'}
-  if(status === 'visited') {statusClass = statuss[3] + color; select = 'visited'}
+  if(status === q_status[0]) statusClass = color
+  if(status === q_status[1]) {statusClass = statuss[0] + color; select = q_status[1]}
+  if(status === q_status[2]) {statusClass = statuss[1] + color; select = q_status[2]}
+  if(status === q_status[3]) {statusClass = statuss[2] + color; select = q_status[3]}
+  if(status === q_status[4]) {statusClass = statuss[3] + color; select = q_status[4]}
   clases.forEach(clase => {
     if(clase['el'] === e) {
       if(clase['clase']){
@@ -327,31 +330,31 @@ const change = (color, e, select) => {
 
 colores.addEventListener('change', () => {
   dark ? boton.classList.remove('text-white') : boton.classList.remove('text-black')
-  change(colores.value, 'colors', 'text'); 
+  change(colores.value, colores.name, rules[0]); 
 })
-bgs.addEventListener('change', () => {change(bgs.value, 'bg', 'bg')})
-padd.addEventListener('change', () => {change(padd.value, 'padding', 'p')})
-brd_w.addEventListener('change', () => {change(brd_w.value, 'border_width', 'border')})
-brd_c.addEventListener('change', () => {change(brd_c.value, 'border_color', 'border')})
-brd_r.addEventListener('change', () => {change(brd_r.value, 'border_radius', 'rounded')})
-brd_s.addEventListener('change', () => {change(brd_s.value, 'border_style', 'border')})
-brd_o.addEventListener('change', () => {change(brd_o.value, 'border_opacity', 'border')})
-font.addEventListener('change', () => {change(font.value, 'fontsize', 'text')})
-t_decoration.addEventListener('change', () => {change(t_decoration.value, 'decoration')})
-shadow.addEventListener('change', () => {change(shadow.value, 'shadows', 'shadow')})
-text_align.addEventListener('change', () => {change(text_align.value, 'text_aligns', 'text')})
-width.addEventListener('change', () => {change(width.value, 'widths', 'w')})
-height.addEventListener('change', () => {change(height.value, 'heights', 'h')})
-scale.addEventListener('change', () => {change(scale.value, 'scales', 'scale')})
-rotate.addEventListener('change', () => {change(rotate.value, 'rotates', 'rotate')})
-translate.addEventListener('change', () => {change(translate.value, 'translates', 'translates')})
-brightnes.addEventListener('change', () => {change(brightnes.value, 'brightness', 'brightness')})
-contrast.addEventListener('change', () => {change(contrast.value, 'contrasts', 'contrast')})
-blur.addEventListener('change', () => {change(blur.value, 'blurs', 'blur')})
-hue.addEventListener('change', () => {change(hue.value, 'hues', 'hue')})
-weight.addEventListener('change', () => {change(weight.value, 'weights', 'font')})
-opacity.addEventListener('change', () => {change(opacity.value, 'opacitys', 'opacity')})
-cursor.addEventListener('change', () => {change(cursor.value, 'cursors', 'cursor')})
+bgs.addEventListener('change', () => {change(bgs.value, bgs.name, rules[1])})
+padd.addEventListener('change', () => {change(padd.value, padd.name, rules[2])})
+brd_w.addEventListener('change', () => {change(brd_w.value, brd_w.name, rules[3])})
+brd_c.addEventListener('change', () => {change(brd_c.value, brd_c.name, rules[3])})
+brd_r.addEventListener('change', () => {change(brd_r.value, brd_r.name, rules[17])})
+brd_s.addEventListener('change', () => {change(brd_s.value, brd_s.name, rules[3])})
+brd_o.addEventListener('change', () => {change(brd_o.value, brd_o.name, rules[3])})
+font.addEventListener('change', () => {change(font.value, font.name, rules[1])})
+t_decoration.addEventListener('change', () => {change(t_decoration.value, t_decoration.name)})
+shadow.addEventListener('change', () => {change(shadow.value, shadow.name, rules[4])})
+text_align.addEventListener('change', () => {change(text_align.value, text_align.name, rules[0])})
+width.addEventListener('change', () => {change(width.value, width.name, rules[5])})
+height.addEventListener('change', () => {change(height.value, height.name, rules[6])})
+scale.addEventListener('change', () => {change(scale.value, scale.name, rules[7])})
+rotate.addEventListener('change', () => {change(rotate.value, rotate.name, rules[8])})
+translate.addEventListener('change', () => {change(translate.value, translate.name, rules[9])})
+brightnes.addEventListener('change', () => {change(brightnes.value, brightnes.name, rules[10])})
+contrast.addEventListener('change', () => {change(contrast.value, contrast.name, rules[11])})
+blur.addEventListener('change', () => {change(blur.value, blur.name, rules[12])})
+hue.addEventListener('change', () => {change(hue.value, hue.name, rules[13])})
+weight.addEventListener('change', () => {change(weight.value, weight.name, rules[14])})
+opacity.addEventListener('change', () => {change(opacity.value, opacity.name, rules[15])})
+cursor.addEventListener('change', () => {change(cursor.value, cursor.name, rules[16])})
 
 theme.addEventListener('click', () => {
   if(dark){

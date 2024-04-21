@@ -25,6 +25,37 @@ export const clases_el = [
     'cursors',
 ]
 
+export const txtButton = 'click here to copy code'
+
+export const rules = [
+    'text',
+    'bg',
+    'p',
+    'border',
+    'shadow',
+    'w',
+    'h',
+    'scale',
+    'rotate',
+    'translates',
+    'brightness',
+    'contrast',
+    'blur',
+    'hue',
+    'font',
+    'opacity',
+    'cursor',
+    'rounded',
+]
+
+export const q_status = [
+    'default',
+    'active',
+    'focus',
+    'hover',
+    'visited',
+]
+
 export const statuss = [
     'active:',
     'focus:',
