@@ -24,6 +24,7 @@ import {  clases_el,
           weights,
           opacitys,
           cursors,
+          statuss,
         } from './constantes'
 
 const clases = []
@@ -31,6 +32,7 @@ clases_el.forEach((el) => {
   clases.push({el:el,clase:null})
 })
 
+/******************************************** */
 /*** menu***************************************/
 
 let status = 'default';
@@ -78,6 +80,7 @@ const pEl = document.querySelector('#pEl')
 const drop = document.querySelector('#drop')
 let boton = document.querySelector('#boton')
 let element = 'button';
+
 const menuHtml = new Collapse(drop)
 
 drop.addEventListener('click', () => { menuHtml.expand()})
@@ -150,6 +153,7 @@ const hidden = (e, txt) => {
 /********************************************** */
 
 const root = document.querySelector('html')
+const ifr = document.querySelector('#iframe')
 const body = document.querySelector('body')
 const theme = document.querySelector('#theme')
 const colores = document.querySelector('#colores')
@@ -292,10 +296,10 @@ bg.forEach(color => {
 const change = (color, e, select) => {
   let statusClass;
   if(status === 'default') statusClass = color
-  if(status === 'active') {statusClass = 'active:' + color; select = 'active'}
-  if(status === 'focus') {statusClass = 'focus:' + color; select = 'focus'}
-  if(status === 'hover') {statusClass = 'hover:' + color; select = 'hover'}
-  if(status === 'visited') {statusClass = 'visited:' + color; select = 'visited'}
+  if(status === 'active') {statusClass = statuss[0] + color; select = 'active'}
+  if(status === 'focus') {statusClass = statuss[1] + color; select = 'focus'}
+  if(status === 'hover') {statusClass = statuss[2] + color; select = 'hover'}
+  if(status === 'visited') {statusClass = statuss[3] + color; select = 'visited'}
   clases.forEach(clase => {
     if(clase['el'] === e) {
       if(clase['clase']){
@@ -304,6 +308,8 @@ const change = (color, e, select) => {
       }
       clase['clase'] = statusClass
       boton.classList.add(clase['clase'])
+      localStorage.setItem('clase', boton.classList)
+      ifr.contentWindow.location.reload()
     }
   })
   const co = document.querySelector('#code')

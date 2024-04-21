@@ -25,6 +25,13 @@ export const clases_el = [
     'cursors',
 ]
 
+export const statuss = [
+    'active:',
+    'focus:',
+    'hover:',
+    'visited:'
+]
+
 export const cursors = [
     'cursor-auto',
     'cursor-default',
