@@ -137,8 +137,10 @@ pEl.addEventListener('click', () => {
 })
 
 const hidden = (e, txt) => {
+  localStorage.setItem('element', e)
   const newEl = document.createElement(e)
-  if(e === 'a') newEl.href = '#'
+  if(e === 'a') newEl.href = '#' 
+  if(e=== 'img') newEl.src = './img.avif'
   newEl.textContent = txt
   newEl.id = "boton"
   newEl.classList = boton.classList
@@ -327,9 +329,9 @@ const change = (color, e, select) => {
   })
   boton.removeEventListener('click', () =>{})
 }
-
+change('text-white', 'colors', 'txt')
 colores.addEventListener('change', () => {
-  dark ? boton.classList.remove('text-white') : boton.classList.remove('text-black')
+  //dark ? boton.classList.remove('text-white') : boton.classList.remove('text-black')
   change(colores.value, colores.name, rules[0]); 
 })
 bgs.addEventListener('change', () => {change(bgs.value, bgs.name, rules[1])})
