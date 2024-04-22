@@ -135,7 +135,7 @@ pEl.addEventListener('click', () => {
     element = 'p'
     hidden('p', txtButton)
 })
-
+localStorage.setItem('element', 'button')
 const hidden = (e, txt) => {
   localStorage.setItem('element', e)
   const newEl = document.createElement(e)

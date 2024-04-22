@@ -13,4 +13,4 @@ if(localStorage.getItem('element')){
     newEl.id = "pre"
     newEl.classList = pre.classList
     pre.parentNode.replaceChild(newEl, pre)
-}
+} 
