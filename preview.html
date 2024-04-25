@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>preview</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {},
+            },
+            plugins: [],
+        }
+    </script>
 </head>
 <body>
-    <div class="flex justify-center w-100 h-screen items-center">
-        <button id="pre" class="text-white">Texto</button>
+    <div class="flex justify-center bg-slate-200 w-100 h-screen items-center dark:bg-slate-900">
+        <button id="pre">Texto</button>
     </div>
     <script src="./preview.js"></script>
 </body>

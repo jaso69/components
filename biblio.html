@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {},
+            },
+            plugins: [],
+    }
+    </script>
+    <title>Biblioteca</title>
+</head>
+<body class="bg-gray-900">
+    <main class="flex flex-wrap h-screen items-center justify-center">
+        <button id="boton" class="text-white font-semibold text-xl p-4 border-8 rounded-full border-lime-500 border-double hover:border-solid hover:text-lime-500 hover:brightness-100 active:text-lime-400 active:brightness-125 active:translate-y-1">
+            click here to copy code
+        </button>
+        <button id="boton" class="text-xl text-slate-200 bg-lime-500 p-4 rounded-3xl border-8 border-lime-500 hover:bg-transparent hover:border-dashed active:translate-y-0.5 active:text-lime-500 active:brightness-125 active:font-semibold active:rotate-1">
+            click here to copy code
+        </button>
+    </main>
+</body>
+</html>

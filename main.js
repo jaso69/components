@@ -24,7 +24,6 @@ import {  clases_el,
           weights,
           opacitys,
           cursors,
-          statuss,
           rules,
           q_status,
           txtButton,
@@ -86,7 +85,7 @@ let element = 'button';
 
 const menuHtml = new Collapse(drop)
 
-drop.addEventListener('click', () => { menuHtml.expand()})
+//drop.addEventListener('click', () => { menuHtml.expand()})
 
 buttonEl.addEventListener('click', () => {
     drop.innerHTML = 'Button'
@@ -136,28 +135,26 @@ pEl.addEventListener('click', () => {
     hidden('p', txtButton)
 })
 localStorage.setItem('element', 'button')
+
 const hidden = (e, txt) => {
   localStorage.setItem('element', e)
   const newEl = document.createElement(e)
   if(e === 'a') newEl.href = '#' 
-  if(e=== 'img') newEl.src = './img.avif'
+  if(e=== 'img') { newEl.src = './img.avif' }
   newEl.textContent = txt
   newEl.id = "boton"
   newEl.classList = boton.classList
-  if(dark) {
-    newEl.classList.remove('text-black')
-    newEl.classList.add('text-white')
-  } else {
-    newEl.classList.remove('text-white')
-    newEl.classList.add('text-black')
-  }
   boton.parentNode.replaceChild(newEl, boton)
   boton = document.querySelector('#boton')
+  const co = document.querySelector('#code')
+  co.textContent = boton.outerHTML
+  localStorage.setItem('element', e)
+  ifr.contentWindow.location.reload()
 }
 
 /********************************************** */
 
-const root = document.querySelector('html')
+const html_theme = document.querySelector('html')
 const ifr = document.querySelector('#iframe')
 const body = document.querySelector('body')
 const theme = document.querySelector('#theme')
@@ -185,9 +182,10 @@ const hue = document.querySelector('#hues')
 const weight = document.querySelector('#weights')
 const opacity = document.querySelector('#opacitys')
 const cursor = document.querySelector('#cursors')
+const theme_select = document.querySelector('#theme_select')
 //const boton = document.querySelector('#boton')
 
-let dark = true;
+let dark_op = false;
 
 const op = (color, c_border) =>{
   const opcion = document.createElement("option");
@@ -298,17 +296,49 @@ bg.forEach(color => {
   bgs.add(op(color))
 })
 
-const change = (color, e, select) => {
+const change = (color, e) => {
   let statusClass;
-  if(status === q_status[0]) statusClass = color
-  if(status === q_status[1]) {statusClass = statuss[0] + color; select = q_status[1]}
-  if(status === q_status[2]) {statusClass = statuss[1] + color; select = q_status[2]}
-  if(status === q_status[3]) {statusClass = statuss[2] + color; select = q_status[3]}
-  if(status === q_status[4]) {statusClass = statuss[3] + color; select = q_status[4]}
+  if(status === q_status[0] && dark_op) {
+    statusClass = 'dark:' + color
+    e = 'dark:' + e
+  } else {
+    statusClass = color
+  }
+  if(status === q_status[1] && dark_op) {
+    statusClass = q_status[5] + color; 
+    e = q_status[5] + e
+  } else if(status === q_status[1] && !dark_op) {
+    e = q_status[1] + e
+    statusClass = q_status[1] + color
+  }
+  if(status === q_status[2] && dark_op) {
+    statusClass = q_status[6] + color; 
+    e = q_status[6] + e
+  } else if (status === q_status[2] && !dark_op){
+    e = q_status[2] + e
+    statusClass = q_status[2] + color
+  }
+  if(status === q_status[3] && dark_op) {
+    statusClass = q_status[7] + color; 
+    e = q_status[7] + e
+  } else if (status === q_status[3] && !dark_op){
+    statusClass = q_status[3] + color; 
+    e = q_status[3] + e
+  }
+  if(status === q_status[4] && dark_op) {
+    statusClass = q_status[8] + color; 
+    e = q_status[8] + e
+  } else if(status === q_status[4] && !dark_op){
+    statusClass = q_status[4] + color; 
+    e = q_status[4] + e
+  }
+  console.log(status)
+  console.log(statusClass)
+  
   clases.forEach(clase => {
     if(clase['el'] === e) {
       if(clase['clase']){
-        if (clase['clase'].startsWith(select)) boton.classList.remove(clase['clase'])
+        if (clase['clase']) boton.classList.remove(clase['clase'])
         if(e === 'decoration' && clase['clase']) boton.classList.remove(clase['clase'])
       }
       clase['clase'] = statusClass
@@ -329,49 +359,73 @@ const change = (color, e, select) => {
   })
   boton.removeEventListener('click', () =>{})
 }
-change('text-white', 'colors', 'txt')
+change('text-white', 'colors')
 colores.addEventListener('change', () => {
   //dark ? boton.classList.remove('text-white') : boton.classList.remove('text-black')
   change(colores.value, colores.name, rules[0]); 
 })
-bgs.addEventListener('change', () => {change(bgs.value, bgs.name, rules[1])})
-padd.addEventListener('change', () => {change(padd.value, padd.name, rules[2])})
-brd_w.addEventListener('change', () => {change(brd_w.value, brd_w.name, rules[3])})
-brd_c.addEventListener('change', () => {change(brd_c.value, brd_c.name, rules[3])})
-brd_r.addEventListener('change', () => {change(brd_r.value, brd_r.name, rules[17])})
-brd_s.addEventListener('change', () => {change(brd_s.value, brd_s.name, rules[3])})
-brd_o.addEventListener('change', () => {change(brd_o.value, brd_o.name, rules[3])})
-font.addEventListener('change', () => {change(font.value, font.name, rules[1])})
+bgs.addEventListener('change', () => {change(bgs.value, bgs.name)})
+padd.addEventListener('change', () => {change(padd.value, padd.name)})
+brd_w.addEventListener('change', () => {change(brd_w.value, brd_w.name)})
+brd_c.addEventListener('change', () => {change(brd_c.value, brd_c.name)})
+brd_r.addEventListener('change', () => {change(brd_r.value, brd_r.name)})
+brd_s.addEventListener('change', () => {change(brd_s.value, brd_s.name)})
+brd_o.addEventListener('change', () => {change(brd_o.value, brd_o.name)})
+font.addEventListener('change', () => {change(font.value, font.name)})
 t_decoration.addEventListener('change', () => {change(t_decoration.value, t_decoration.name)})
-shadow.addEventListener('change', () => {change(shadow.value, shadow.name, rules[4])})
-text_align.addEventListener('change', () => {change(text_align.value, text_align.name, rules[0])})
-width.addEventListener('change', () => {change(width.value, width.name, rules[5])})
-height.addEventListener('change', () => {change(height.value, height.name, rules[6])})
-scale.addEventListener('change', () => {change(scale.value, scale.name, rules[7])})
-rotate.addEventListener('change', () => {change(rotate.value, rotate.name, rules[8])})
-translate.addEventListener('change', () => {change(translate.value, translate.name, rules[9])})
-brightnes.addEventListener('change', () => {change(brightnes.value, brightnes.name, rules[10])})
-contrast.addEventListener('change', () => {change(contrast.value, contrast.name, rules[11])})
-blur.addEventListener('change', () => {change(blur.value, blur.name, rules[12])})
-hue.addEventListener('change', () => {change(hue.value, hue.name, rules[13])})
-weight.addEventListener('change', () => {change(weight.value, weight.name, rules[14])})
-opacity.addEventListener('change', () => {change(opacity.value, opacity.name, rules[15])})
-cursor.addEventListener('change', () => {change(cursor.value, cursor.name, rules[16])})
+shadow.addEventListener('change', () => {change(shadow.value, shadow.name)})
+text_align.addEventListener('change', () => {change(text_align.value, text_align.name)})
+width.addEventListener('change', () => {change(width.value, width.name)})
+height.addEventListener('change', () => {change(height.value, height.name)})
+scale.addEventListener('change', () => {change(scale.value, scale.name)})
+rotate.addEventListener('change', () => {change(rotate.value, rotate.name)})
+translate.addEventListener('change', () => {change(translate.value, translate.name)})
+brightnes.addEventListener('change', () => {change(brightnes.value, brightnes.name)})
+contrast.addEventListener('change', () => {change(contrast.value, contrast.name)})
+blur.addEventListener('change', () => {change(blur.value, blur.name)})
+hue.addEventListener('change', () => {change(hue.value, hue.name)})
+weight.addEventListener('change', () => {change(weight.value, weight.name)})
+opacity.addEventListener('change', () => {change(opacity.value, opacity.name)})
+cursor.addEventListener('change', () => {change(cursor.value, cursor.name)})
+theme_select.addEventListener('change', () => { themeHandler() })
 
-theme.addEventListener('click', () => {
-  if(dark){
-    body.classList.remove('bg-gray-900')
-    boton.classList.remove('text-white')
-    body.classList.remove('dark')
-    body.classList.add('bg-[#eee]')
-    boton.classList.add('text-black')
-  } else {
-    body.classList.remove('bg-[#eee]')
-    boton.classList.remove('text-black')
-    body.classList.add('bg-gray-900')
-    body.classList.add('dark')
-    boton.classList.add('text-white')
+theme.addEventListener('click', () => { darkLight() })
+
+let tmp_theme = true;
+function themeHandler() {
+  if (theme_select.value === 'none') {
+    html_theme.classList.remove('dark')
+    dark_op = false
+    localStorage.setItem('theme', 'none')
   }
-  dark = !dark
+  if (theme_select.value === 'dark') {
+    html_theme.classList.add('dark')
+    dark_op = true
+    body.classList.remove('bg-slate-200')
+    body.classList.add('bg-gray-900')
+    localStorage.setItem('theme', 'dark')
+  }
+  if (theme_select.value === 'light') {
+    html_theme.classList.remove('dark')
+    body.classList.add('bg-slate-200')
+    body.classList.remove('bg-gray-900')
+    dark_op = false
+    tmp_theme = false
+    localStorage.setItem('theme', 'light')
+  }
+  ifr.contentWindow.location.reload()
+}
 
-})
+function darkLight() {
+  if(tmp_theme){
+    body.classList.remove('bg-gray-900')
+    body.classList.add('bg-slate-200')
+    localStorage.setItem('theme', 'light')
+  } else {
+    body.classList.remove('bg-slate-200')
+    body.classList.add('bg-gray-900')
+    localStorage.setItem('theme', 'dark')
+  }
+  tmp_theme = !tmp_theme
+  ifr.contentWindow.location.reload()
+}

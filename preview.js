@@ -1,4 +1,14 @@
 const pre = document.querySelector('#pre')
+const html_theme = document.querySelector('html')
+
+if( localStorage.getItem('theme') === 'none' || 
+    localStorage.getItem('theme') === 'light'){
+    html_theme.classList.remove('dark')
+}
+
+if(localStorage.getItem('theme') === 'dark'){
+    html_theme.classList.add('dark')
+}
 
 if(localStorage.getItem('clase')){
     const clase = localStorage.getItem('clase')

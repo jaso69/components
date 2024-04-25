@@ -4,6 +4,7 @@ export default {
     "./*.html",
     "./*.js",
   ],
+  darkMode: 'class',
   theme: {
     extend: {},
   },
