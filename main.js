@@ -36,6 +36,7 @@ const ifr = document.querySelector('#iframe')
 const body = document.querySelector('body')
 const theme = document.querySelector('#theme')
 const theme_select = document.querySelector('#theme_select')
+const tooltip = document.querySelector('#tooltip')
 const co = document.querySelector('#code')
 const menuHtml = new Collapse(drop)
 let boton = document.querySelector('#boton')
@@ -219,8 +220,24 @@ function copy(){
     temp.select()
     document.execCommand('copy')
     document.body.removeChild(temp)
+    clipEffect()
   })
   boton.removeEventListener('click', () =>{})
+}
+
+function clipEffect(){
+  tooltip.classList.remove('opacity-0')
+    tooltip.classList.remove('hidden')
+    tooltip.classList.add('duration-700')
+    tooltip.classList.add('opacity-100')
+    tooltip.classList.add('-translate-y-4')
+  setTimeout(() => {
+    tooltip.classList.remove('duration-700')
+    tooltip.classList.remove('opacity-100')
+    tooltip.classList.remove('-translate-y-4')
+    tooltip.classList.add('opacity-0')
+    tooltip.classList.add('hidden')
+  }, 1000)
 }
 
 function themeHandler() {
