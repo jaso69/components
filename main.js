@@ -14,7 +14,8 @@ clases_el.forEach((el) => {
   clases.push({el:el,clase:null})
 })
 
-
+const warningState = document.querySelector('#warningState')
+const warningTheme = document.querySelector('#warningTheme')
 const defaultEl = document.querySelector('#defaultEl')
 const activeEl = document.querySelector('#activeEl')
 const focusEl = document.querySelector('#focusEl')
@@ -81,27 +82,37 @@ change('text-white', 'colors')
 defaultEl.addEventListener('click', () => {
   dropStatus.innerHTML = q_status[0]
   status = q_status[0]
+  if (!warningState.classList.contains('hidden')) warningState.classList.add('hidden')
 })
 
 activeEl.addEventListener('click', () => {
+  warn('ACTIVE')
   dropStatus.innerHTML = q_status[1]
   status = q_status[1]
 })
 
 focusEl.addEventListener('click', () => {
+  warn('FOCUS')
   dropStatus.innerHTML = q_status[2]
   status = q_status[2]
 })
 
 hoverEl.addEventListener('click', () => {
+  warn('HOVER')
   dropStatus.innerHTML = q_status[3]
   status = q_status[3]
 })
 
 visitedEl.addEventListener('click', () => {
+  warn('VISITED')
   dropStatus.innerHTML = q_status[4]
   status = q_status[4]
 })
+
+function warn(state){
+  warningState.classList.remove('hidden')
+  warningState.innerHTML = `The classes only apply to the ${state} state.`
+}
 //drop.addEventListener('click', () => { menuHtml.expand()})
 
 buttonEl.addEventListener('click', () => {
@@ -216,15 +227,19 @@ function themeHandler() {
   if (theme_select.value === 'none') {
     themeStorage( 'dark', 'none')
     noneTheme()
+    warningTheme.classList.add('hidden')
     dark_op = false
   }
   if (theme_select.value === 'dark') {
     html_theme.classList.add('dark')
     localStorage.setItem('theme', 'dark')
+    warningTheme.classList.remove('hidden')
+    warningTheme.innerHTML = 'The classes only apply to the Dark Mode.'
     dark_op = true
     bgGray()
   }
   if (theme_select.value === 'light') {
+    warningTheme.classList.remove('hidden')
     themeStorage( 'dark', 'light')
     bgSlate()
     dark_op = false
