@@ -239,6 +239,56 @@ export const clases_el = [
     'dark:hover:cursors',
     'visited:cursors',
     'dark:visited:cursors',
+    'durations',
+    'dark:durations',
+    'active:durations',
+    'dark:active:durations',
+    'focus:durations',
+    'dark:focus:durations',
+    'hover:durations',
+    'dark:hover:durations',
+    'visited:durations',
+    'dark:visited:durations',
+    'timings',
+    'dark:timings',
+    'active:timings',
+    'dark:active:timings',
+    'focus:timings',
+    'dark:focus:timings',
+    'hover:timings',
+    'dark:hover:timings',
+    'visited:timings',
+    'dark:visited:timings',
+    'delays',
+    'dark:delays',
+    'active:delays',
+    'dark:active:delays',
+    'focus:delays',
+    'dark:focus:delays',
+    'hover:delays',
+    'dark:hover:delays',
+    'visited:delays',
+    'dark:visited:delays',
+    'animations',
+    'dark:animations',
+    'active:animations',
+    'dark:active:animations',
+    'focus:animations',
+    'dark:focus:animations',
+    'hover:animations',
+    'dark:hover:animations',
+    'visited:animations',
+    'dark:visited:animations',
+    'backdropBlurs',
+    'dark:backdropBlurs',
+    'active:backdropBlurs',
+    'dark:active:backdropBlurs',
+    'focus:backdropBlurs',
+    'dark:focus:backdropBlurs',
+    'hover:backdropBlurs',
+    'dark:hover:backdropBlurs',
+    'visited:backdropBlurs',
+    'dark:visited:backdropBlurs',
 ]
 
 export const txtButton = 'click here to copy code'
@@ -274,6 +324,54 @@ export const q_status = [
     'dark:focus:',
     'dark:hover:',
     'dark:visited:',
+]
+
+export const backdropBlurs = [
+    'backdrop-blur-none',
+    'backdrop-blur-sm',
+    'backdrop-blur',
+    'backdrop-blur-md',
+    'backdrop-blur-lg',
+    'backdrop-blur-xl',
+    'backdrop-blur-2xl',
+    'backdrop-blur-3xl',
+]
+
+export const animations = [
+    'animate-none',
+    'animate-spin',
+    'animate-ping',
+    'animate-pulse',
+    'animate-bounce',
+]
+
+export const delays = [
+    'delay-75',
+    'delay-100',
+    'delay-150',
+    'delay-200',
+    'delay-300',
+    'delay-500',
+    'delay-700',
+    'delay-1000',
+]
+
+export const timings = [
+    'ease-linear',
+    'ease-in',
+    'ease-out',
+    'ease-in-out',
+]
+
+export const durations = [
+    'duration-75',
+    'duration-100',
+    'duration-150',
+    'duration-200',
+    'duration-300',
+    'duration-500',
+    'duration-700',
+    'duration-1000',
 ]
 
 export const cursors = [

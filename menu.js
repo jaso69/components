@@ -21,32 +21,18 @@ import {    colors,
             hues,
             weights,
             opacitys,
-            cursors, } from "./constantes";
+            cursors,
+            durations,
+            timings,
+            delays,
+            animations,
+            backdropBlurs,
+} from "./constantes";
 
-const colores = document.querySelector('#colores')
-const bgs = document.querySelector('#bg') 
-const padd = document.querySelector('#padding')
-const brd_w = document.querySelector('#brd-w')
-const brd_c = document.querySelector('#brd-c')
-const brd_r = document.querySelector('#brd-r')
-const brd_s = document.querySelector('#brd-s') 
-const brd_o = document.querySelector('#brd-o')
-const font = document.querySelector('#font')
-const t_decoration = document.querySelector('#decoration')
-const shadow = document.querySelector('#shadow')
-const text_align = document.querySelector('#text_align')
-const width = document.querySelector('#widths')
-const height = document.querySelector('#heights')
-const scale = document.querySelector('#scales')
-const rotate = document.querySelector('#rotates')
-const translate = document.querySelector('#translates')
-const brightnes = document.querySelector('#brightness')
-const contrast = document.querySelector('#contrasts')
-const blur = document.querySelector('#blurs')
-const hue = document.querySelector('#hues')
-const weight = document.querySelector('#weights')
-const opacity = document.querySelector('#opacitys')
-const cursor = document.querySelector('#cursors')
+import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
+shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
+blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur 
+} from "./selectors";
 
 const op = (color, c_border) =>{
     const opcion = document.createElement("option");
@@ -61,6 +47,25 @@ const op = (color, c_border) =>{
     return opcion
   }
 
+backdropBlurs.forEach(color => {
+    backdropBlur.add(op(color))
+})
+
+animations.forEach(color => {
+    animation.add(op(color))
+})
+
+delays.forEach(color => {
+    delay.add(op(color))
+})
+
+timings.forEach(color => {
+    timing.add(op(color))
+  })
+
+durations.forEach(color => {
+    duration.add(op(color))
+  })
 
 cursors.forEach(color => {
     cursor.add(op(color))
