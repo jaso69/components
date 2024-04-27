@@ -7,7 +7,8 @@ import {  clases_el,
 
 import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
   shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
-  blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur } from "./selectors";
+  blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur,
+  shadowColors } from "./selectors";
 
 const clases = []
 clases_el.forEach((el) => {
@@ -45,6 +46,7 @@ let tmp_theme = true;
 let status = 'default';
 
 colores.addEventListener('change', () => { change(colores.value, colores.name, rules[0]); })
+shadowColors.addEventListener('change', () => {change(shadowColors.value, shadowColors.name)})
 backdropBlur.addEventListener('change', () => {change(backdropBlur.value, backdropBlur.name)})
 animation.addEventListener('change', () => {change(animation.value, animation.name)})
 delay.addEventListener('change', () => {change(delay.value, delay.name)})

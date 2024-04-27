@@ -27,12 +27,13 @@ import {    colors,
             delays,
             animations,
             backdropBlurs,
+            shadow_color,
 } from "./constantes";
 
 import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
 shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
-blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur 
-} from "./selectors";
+blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur,
+shadowColors, } from "./selectors";
 
 const op = (color, c_border) =>{
     const opcion = document.createElement("option");
@@ -41,11 +42,16 @@ const op = (color, c_border) =>{
     if(c_border) {
       if (color.startsWith('text')) {const txtColor = color.replace('text', 'bg'); opcion.classList.add(txtColor)}
       if (color.startsWith('border')) {const newColor = color.replace('border', 'bg'); opcion.classList.add(newColor)} 
+      if (color.startsWith('shadow')) {const newColor = color.replace('shadow', 'bg'); opcion.classList.add(newColor)}
     } else {
       opcion.classList.add(color)
     }
     return opcion
   }
+
+shadow_color.forEach(color => {
+  shadowColors.add(op(color, true))
+})
 
 backdropBlurs.forEach(color => {
     backdropBlur.add(op(color))
