@@ -8,7 +8,7 @@ import {  clases_el,
 import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
   shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
   blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur,
-  shadowColors } from "./selectors";
+  shadowColors, clip, bimage, from, via, to} from "./selectors";
 
 const clases = []
 clases_el.forEach((el) => {
@@ -45,7 +45,12 @@ let dark_op = false;
 let tmp_theme = true;
 let status = 'default';
 
+to.addEventListener('change', () => {change(to.value, to.name)})
+via.addEventListener('change', () => {change(via.value, via.name)})
+from.addEventListener('change', () => {change(from.value, from.name)})
 colores.addEventListener('change', () => { change(colores.value, colores.name, rules[0]); })
+clip.addEventListener('change', () => {change(clip.value, clip.name)})
+bimage.addEventListener('change', () => {change(bimage.value, bimage.name)})
 shadowColors.addEventListener('change', () => {change(shadowColors.value, shadowColors.name)})
 backdropBlur.addEventListener('change', () => {change(backdropBlur.value, backdropBlur.name)})
 animation.addEventListener('change', () => {change(animation.value, animation.name)})
@@ -175,7 +180,6 @@ const hidden = (e, txt) => {
 
 function change(color, e) {
   let statusClass;
-
   q_status.forEach( (estado, index) => {
     if(index === 0 && dark_op){
       statusClass = 'dark:' + color

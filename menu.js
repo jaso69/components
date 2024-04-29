@@ -28,12 +28,17 @@ import {    colors,
             animations,
             backdropBlurs,
             shadow_color,
+            clips,
+            bimages,
+            froms,
+            vias,
+            tos
 } from "./constantes";
 
 import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
 shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
 blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur,
-shadowColors, } from "./selectors";
+shadowColors, clip, bimage, from, via, to } from "./selectors";
 
 const op = (color, c_border) =>{
     const opcion = document.createElement("option");
@@ -43,11 +48,34 @@ const op = (color, c_border) =>{
       if (color.startsWith('text')) {const txtColor = color.replace('text', 'bg'); opcion.classList.add(txtColor)}
       if (color.startsWith('border')) {const newColor = color.replace('border', 'bg'); opcion.classList.add(newColor)} 
       if (color.startsWith('shadow')) {const newColor = color.replace('shadow', 'bg'); opcion.classList.add(newColor)}
+      if (color.startsWith('from')) {const newColor = color.replace('from', 'bg'); opcion.classList.add(newColor)}
+      if (color.startsWith('via')) {const newColor = color.replace('via', 'bg'); opcion.classList.add(newColor)}
+      if (color.startsWith('to')) {const newColor = color.replace('to', 'bg'); opcion.classList.add(newColor)}
     } else {
       opcion.classList.add(color)
     }
     return opcion
   }
+
+bimages.forEach(color => {
+    bimage.add(op(color))
+})
+
+froms.forEach(color => {
+  from.add(op(color, true))
+})
+
+tos.forEach(color => {
+  to.add(op(color, true))
+})
+
+vias.forEach(color => {
+  via.add(op(color, true))
+})
+
+clips.forEach(color => {
+    clip.add(op(color))
+})
 
 shadow_color.forEach(color => {
   shadowColors.add(op(color, true))

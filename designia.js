@@ -1,4 +1,3 @@
-import { Collapse } from 'flowbite'
 
 const loading = document.querySelector('#loading')
 const pregunta = document.querySelector('#pregunta');
@@ -20,10 +19,12 @@ boton.addEventListener('click', (event) => {
     event.preventDefault();
     const p = String(pregunta.value)
     if(p.length < 1) return
+    code.innerHTML = ''
+    codeBoton.classList.add('hidden')
     question = p
     pregunta.value = ''
     prompt = {prompt: p}
-    loading.innerHTML = 'Un momento....'
+    loading.innerHTML = 'Wait a moment....'
     url = 'https://jaweb.es:3000/api/jaweb?prompt=' + p
     Nuevo(prompt)
 })
@@ -35,6 +36,7 @@ const respuesta = (resp) => {
         codeBoton.innerHTML = resp.message;
         code.textContent = resp.message
         divCode.classList.remove('hidden')
+        codeBoton.classList.remove('hidden')
     } else {
         codeBoton.innerHTML = 'We regret that we are unable to respond at this time, please try again in a few minutes.'
     }
