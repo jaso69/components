@@ -349,6 +349,26 @@ export const clases_el = [
     'dark:hover:tos',
     'visited:tos',
     'dark:visited:tos',
+    'styles',
+    'dark:styles',
+    'active:styles',
+    'dark:active:styles',
+    'focus:styles',
+    'dark:focus:styles',
+    'hover:styles',
+    'dark:hover:styles',
+    'visited:styles',
+    'dark:visited:styles',
+    'thickness',
+    'dark:thickness',
+    'active:thickness',
+    'dark:active:thickness',
+    'focus:thickness',
+    'dark:focus:thickness',
+    'hover:thickness',
+    'dark:hover:thickness',
+    'visited:thickness',
+    'dark:visited:thickness',
 ]
 
 export const txtButton = 'click here to copy code'
@@ -384,6 +404,24 @@ export const q_status = [
     'dark:focus:',
     'dark:hover:',
     'dark:visited:',
+]
+
+export const thickness = [
+    'decoration-auto',
+    'decoration-from-font',
+    'decoration-0',
+    'decoration-1',
+    'decoration-2',
+    'decoration-4',
+    'decoration-8',
+]
+
+export const styles = [
+    'decoration-solid',
+    'decoration-double',
+    'decoration-dotted',
+    'decoration-dashed',
+    'decoration-wavy',
 ]
 
 export const tos = [

@@ -8,43 +8,25 @@ import {  clases_el,
 import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
   shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
   blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur,
-  shadowColors, clip, bimage, from, via, to} from "./selectors";
+  shadowColors, clip, bimage, from, via, to, style, thicknes} from "./selectors";
+
+import {warningState, warningTheme, defaultEl, activeEl, focusEl, hoverEl, visitedEl, dropStatus,
+buttonEl, aEl, divEl, imgEl, h1El, h2El, h3El, pEl, drop, html_theme, ifr, body, theme, theme_select, tooltip, co,
+inputEl, fileEl, numberEl, labelEl, selectEl, textareaEl, checkboxEl, radioEl, spanEl} from './selectorsMenu'
 
 const clases = []
 clases_el.forEach((el) => {
   clases.push({el:el,clase:null})
 })
 
-const warningState = document.querySelector('#warningState')
-const warningTheme = document.querySelector('#warningTheme')
-const defaultEl = document.querySelector('#defaultEl')
-const activeEl = document.querySelector('#activeEl')
-const focusEl = document.querySelector('#focusEl')
-const hoverEl = document.querySelector('#hoverEl')
-const visitedEl = document.querySelector('#visitedEl')
-const dropStatus = document.querySelector('#dropStatus')
-const buttonEl = document.querySelector('#buttonEl')
-const aEl = document.querySelector('#aEl')
-const divEl = document.querySelector('#divEl')
-const imgEl = document.querySelector('#imgEl')
-const h1El = document.querySelector('#h1El')
-const h2El = document.querySelector('#h2El')
-const h3El = document.querySelector('#h3El')
-const pEl = document.querySelector('#pEl')
-const drop = document.querySelector('#drop')
-const html_theme = document.querySelector('html')
-const ifr = document.querySelector('#iframe')
-const body = document.querySelector('body')
-const theme = document.querySelector('#theme')
-const theme_select = document.querySelector('#theme_select')
-const tooltip = document.querySelector('#tooltip')
-const co = document.querySelector('#code')
-const menuHtml = new Collapse(drop)
 let boton = document.querySelector('#boton')
+const menuHtml = new Collapse(drop)
 let dark_op = false;
 let tmp_theme = true;
 let status = 'default';
 
+thicknes.addEventListener('change', () => {change(thicknes.value, thicknes.name)})
+style.addEventListener('change', () => {change(style.value, style.name)})
 to.addEventListener('change', () => {change(to.value, to.name)})
 via.addEventListener('change', () => {change(via.value, via.name)})
 from.addEventListener('change', () => {change(from.value, from.name)})
@@ -125,57 +107,116 @@ function warn(state){
 
 buttonEl.addEventListener('click', () => {
     drop.innerHTML = 'Button'
-    hidden('button', txtButton)
+    hidden('button')
+})
+
+inputEl.addEventListener('click', () => {
+  drop.innerHTML = 'Input'
+  hidden('input')
 })
 
 aEl.addEventListener('click', () => {
     drop.innerHTML = 'Anchor'
-    hidden('a', txtButton)
+    hidden('a')
 })
 
 divEl.addEventListener('click', () => {
     drop.innerHTML = 'Div'
-    hidden('div', txtButton)
+    hidden('div')
 })
 
 imgEl.addEventListener('click', () => {
     drop.innerHTML = 'Img'
-    hidden('img', txtButton)
+    hidden('img')
 })
 
 h1El.addEventListener('click', () => {
     drop.innerHTML = 'H1'
-    hidden('h1', txtButton)
+    hidden('h1')
 })
 
 h2El.addEventListener('click', () => {
     drop.innerHTML = 'H2'
-    hidden('h2', txtButton)
+    hidden('h2')
 })
 
 h3El.addEventListener('click', () => {
     drop.innerHTML = 'H3'
-    hidden('h3', txtButton)
+    hidden('h3')
 })
 
 pEl.addEventListener('click', () => {
     drop.innerHTML = 'Paragraph'
-    hidden('p', txtButton)
+    hidden('p')
 })
 
-const hidden = (e, txt) => {
+fileEl.addEventListener('click', () => {
+  drop.innerHTML = 'File Input'
+  hidden('file')
+})
+
+numberEl.addEventListener('click', () => {
+  drop.innerHTML = 'Number Input'
+  hidden('number')
+})
+
+labelEl.addEventListener('click', () => {
+  drop.innerHTML = 'Label'
+  hidden('label')
+})
+
+textareaEl.addEventListener('click', () => {
+  drop.innerHTML = 'Textarea'
+  hidden('textarea')
+})
+
+selectEl.addEventListener('click', () => {
+  drop.innerHTML = 'Select'
+  hidden('select')
+})
+
+checkboxEl.addEventListener('click', () => {
+  drop.innerHTML = 'Checkbox'
+  hidden('checkbox')
+})
+
+const hidden = (e) => {
+  if (e === 'input') { newElement(e, 'input'); typeEl('text'); return}
+  if (e === 'file') { newElement('input', 'file'); typeEl('file') ;return}
+  if (e === 'number') { newElement('input', 'number'); typeEl('number') ;return}
+  if (e === 'checkbox') { newElement('input', 'checkbox'); typeEl('checkbox') ;return}
+  newElement(e)
+}
+
+function typeEl(typel){
+  localStorage.setItem('type', typel)
+}
+
+function newElement(e, ex){
   localStorage.setItem('element', e)
   const newEl = document.createElement(e)
-  if(e === 'a') newEl.href = '#' 
-  if(e=== 'img') { newEl.src = './img.avif' }
-  newEl.textContent = txt
+  if(e === 'a') newEl.href = '#'
+  if(e === 'label') newEl.for = 'anyElement'  
+  if(e === 'img') { newEl.src = './img.avif' }
+  if(ex === 'input') { newEl.type = 'text'; newEl.value = txtButton}
+  if(ex === 'file') { newEl.type = 'file'}
+  if(ex === 'number') { newEl.type = 'number'}
+  if(ex === 'checkbox') { newEl.type = 'checkbox'}
+  newEl.textContent = txtButton
   newEl.id = "boton"
   newEl.classList = boton.classList
   boton.parentNode.replaceChild(newEl, boton)
   boton = document.querySelector('#boton')
+  if(e === 'select'){boton.add(op())}
   co.textContent = boton.outerHTML
-  localStorage.setItem('element', e)
   ifr.contentWindow.location.reload()
+}
+
+function op () {
+  const opcion = document.createElement("option");
+  opcion.text =  txtButton;
+  opcion.value = 'Value';
+  return opcion
 }
 
 function change(color, e) {

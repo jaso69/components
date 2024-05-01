@@ -32,13 +32,15 @@ import {    colors,
             bimages,
             froms,
             vias,
-            tos
+            tos,
+            styles,
+            thickness
 } from "./constantes";
 
 import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
 shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
 blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur,
-shadowColors, clip, bimage, from, via, to } from "./selectors";
+shadowColors, clip, bimage, from, via, to, style, thicknes } from "./selectors";
 
 const op = (color, c_border) =>{
     const opcion = document.createElement("option");
@@ -59,6 +61,14 @@ const op = (color, c_border) =>{
 
 bimages.forEach(color => {
     bimage.add(op(color))
+})
+
+thickness.forEach(color => {
+  thicknes.add(op(color, true))
+})
+
+styles.forEach(color => {
+  style.add(op(color, true))
 })
 
 froms.forEach(color => {
