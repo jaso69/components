@@ -175,10 +175,10 @@ selectEl.addEventListener('click', () => {
   hidden('select')
 })
 
-checkboxEl.addEventListener('click', () => {
-  drop.innerHTML = 'Checkbox'
-  hidden('checkbox')
-})
+// checkboxEl.addEventListener('click', () => {
+//   drop.innerHTML = 'Checkbox'
+//   hidden('checkbox')
+// })
 
 const hidden = (e) => {
   if (e === 'input') { newElement(e, 'input'); typeEl('text'); return}
