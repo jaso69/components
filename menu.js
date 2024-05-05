@@ -35,13 +35,14 @@ import {    colors,
             tos,
             styles,
             thickness,
-            carets
+            outlines,
+            outwidhts,
 } from "./constantes";
 
 import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
 shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
 blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur,
-shadowColors, clip, bimage, from, via, to, style, thicknes, caret } from "./selectors";
+shadowColors, clip, bimage, from, via, to, style, thicknes, outline, outwidht } from "./selectors";
 
 const op = (color, c_border) =>{
     const opcion = document.createElement("option");
@@ -53,7 +54,7 @@ const op = (color, c_border) =>{
       if (color.startsWith('shadow')) {const newColor = color.replace('shadow', 'bg'); opcion.classList.add(newColor)}
       if (color.startsWith('from')) {const newColor = color.replace('from', 'bg'); opcion.classList.add(newColor)}
       if (color.startsWith('via')) {const newColor = color.replace('via', 'bg'); opcion.classList.add(newColor)}
-      if (color.startsWith('caret')) {const newColor = color.replace('caret', 'bg'); opcion.classList.add(newColor)}
+      if (color.startsWith('outline')) {const newColor = color.replace('outline', 'bg'); opcion.classList.add(newColor)}
       if (color.startsWith('to')) {const newColor = color.replace('to', 'bg'); opcion.classList.add(newColor)}
     } else {
       opcion.classList.add(color)
@@ -65,8 +66,12 @@ bimages.forEach(color => {
     bimage.add(op(color))
 })
 
-carets.forEach(color => {
-  caret.add(op(color, true))
+outlines.forEach(color => {
+  outline.add(op(color, true))
+})
+
+outwidhts.forEach(color => {
+  outwidht.add(op(color))
 })
 
 thickness.forEach(color => {

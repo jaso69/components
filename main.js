@@ -8,7 +8,7 @@ import {  clases_el,
 import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
   shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
   blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur,
-  shadowColors, clip, bimage, from, via, to, style, thicknes, caret} from "./selectors";
+  shadowColors, clip, bimage, from, via, to, style, thicknes, outline, outwidht} from "./selectors";
 
 import {warningState, warningTheme, defaultEl, activeEl, focusEl, hoverEl, visitedEl, dropStatus,
 buttonEl, aEl, divEl, imgEl, h1El, h2El, h3El, pEl, drop, html_theme, ifr, body, theme, theme_select, tooltip, co,
@@ -61,7 +61,14 @@ blur.addEventListener('change', () => {change(blur.value, blur.name)})
 hue.addEventListener('change', () => {change(hue.value, hue.name)})
 weight.addEventListener('change', () => {change(weight.value, weight.name)})
 opacity.addEventListener('change', () => {change(opacity.value, opacity.name)})
-caret.addEventListener('change', () => {change(caret.value, caret.name)})
+outline.addEventListener('change', () => {
+  change(outline.value, outline.name)
+  change('outline', 'outs')
+})
+outwidht.addEventListener('change', () => {
+  change(outwidht.value, outwidht.name)
+  change('outline', 'outs')
+})
 cursor.addEventListener('change', () => {change(cursor.value, cursor.name)})
 theme_select.addEventListener('change', () => { themeHandler() })
 theme.addEventListener('click', () => { darkLight() })
