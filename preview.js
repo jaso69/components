@@ -31,7 +31,7 @@ if(localStorage.getItem('element')){
     newEl.classList = pre.classList
     if(el === 'select'){ newEl.add(op()); newEl.add(op())}
     pre.parentNode.replaceChild(newEl, pre)
-    if(typel === 'checkbox' && el === 'input'){check.classList.remove('hidden'); pCheck.classList = pre.classList}
+    //if(typel === 'checkbox' && el === 'input'){check.classList.remove('hidden'); pCheck.classList = pre.classList}
 } 
 
 function op () {

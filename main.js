@@ -8,7 +8,7 @@ import {  clases_el,
 import { colores, bgs, padd, brd_w, brd_c, brd_r, brd_s, brd_o, font, t_decoration,
   shadow, text_align, width, height, scale, rotate, translate, brightnes, contrast,
   blur, hue, weight, opacity, cursor, duration, timing, delay, animation, backdropBlur,
-  shadowColors, clip, bimage, from, via, to, style, thicknes} from "./selectors";
+  shadowColors, clip, bimage, from, via, to, style, thicknes, caret} from "./selectors";
 
 import {warningState, warningTheme, defaultEl, activeEl, focusEl, hoverEl, visitedEl, dropStatus,
 buttonEl, aEl, divEl, imgEl, h1El, h2El, h3El, pEl, drop, html_theme, ifr, body, theme, theme_select, tooltip, co,
@@ -61,6 +61,7 @@ blur.addEventListener('change', () => {change(blur.value, blur.name)})
 hue.addEventListener('change', () => {change(hue.value, hue.name)})
 weight.addEventListener('change', () => {change(weight.value, weight.name)})
 opacity.addEventListener('change', () => {change(opacity.value, opacity.name)})
+caret.addEventListener('change', () => {change(caret.value, caret.name)})
 cursor.addEventListener('change', () => {change(cursor.value, cursor.name)})
 theme_select.addEventListener('change', () => { themeHandler() })
 theme.addEventListener('click', () => { darkLight() })
@@ -175,16 +176,27 @@ selectEl.addEventListener('click', () => {
   hidden('select')
 })
 
-// checkboxEl.addEventListener('click', () => {
-//   drop.innerHTML = 'Checkbox'
-//   hidden('checkbox')
-// })
+spanEl.addEventListener('click', () => {
+  drop.innerHTML = 'Span'
+  hidden('span')
+})
+
+radioEl.addEventListener('click', () => {
+  drop.innerHTML = 'Radio'
+  hidden('radio')
+})
+
+checkboxEl.addEventListener('click', () => {
+  drop.innerHTML = 'Checkbox'
+  hidden('checkbox')
+})
 
 const hidden = (e) => {
   if (e === 'input') { newElement(e, 'input'); typeEl('text'); return}
   if (e === 'file') { newElement('input', 'file'); typeEl('file') ;return}
   if (e === 'number') { newElement('input', 'number'); typeEl('number') ;return}
   if (e === 'checkbox') { newElement('input', 'checkbox'); typeEl('checkbox') ;return}
+  if (e === 'radio') { newElement('input', 'radio'); typeEl('radio') ;return}
   newElement(e)
 }
 
@@ -201,7 +213,8 @@ function newElement(e, ex){
   if(ex === 'input') { newEl.type = 'text'; newEl.value = txtButton}
   if(ex === 'file') { newEl.type = 'file'}
   if(ex === 'number') { newEl.type = 'number'}
-  if(ex === 'checkbox') { newEl.type = 'checkbox'}
+  if(ex === 'checkbox') {newEl.type = 'checkbox'; boton.classList.add('form-checkbox')}
+  if(ex === 'radio') {newEl.type = 'radio'; boton.classList.add('form-radio')}
   newEl.textContent = txtButton
   newEl.id = "boton"
   newEl.classList = boton.classList

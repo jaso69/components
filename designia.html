@@ -6,9 +6,19 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <meta name="description" content="Jaweb.es is a component generator based on Tailwind CSS that allows you to create user interfaces quickly and easily.">
-    <meta name="keywords" content="jaweb, component generator, Tailwind CSS, user interfaces, web design">
-    <meta name="author" content="@joseonieva2">
+    <meta name="description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. utilizando inteligencia artificial!">
+    <meta name="keywords" content="HTML, Tailwind CSS, Generador HTML, Diseño Web, JaWeb, CSS, Desarrollo Web, inteligencia artificial">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaweb.es/designia.html">
+    <meta property="og:title" content="Generador de Elementos HTML con Tailwind CSS - JaWeb">
+    <meta property="og:description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. Seleccione el elemento, su estado y aplique las reglas CSS a su gusto, optimizando sus proyectos web de manera eficaz y rápida.">
+    <meta property="og:image" content="https://jaweb.es/image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://jaweb.es/designia.html">
+    <meta name="twitter:title" content="Generador de Elementos HTML con Tailwind CSS - JaWeb">
+    <meta name="twitter:description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. Seleccione el elemento, su estado y aplique las reglas CSS a su gusto, optimizando sus proyectos web de manera eficaz y rápida.">
+    <meta name="twitter:image" content="https://jaweb.es/image.png">
+    <meta name="author" content="@joseonieva2"><meta name="author" content="@joseonieva2">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -54,20 +64,25 @@
           </div>
         </nav>
   
-      </header>
-      <main class="flex flex-wrap flex-col h-100 m-4 w-100 items-center mt-[96px] justify-center gap-12">
-        <div class="flex flex-col gap-8">
-            <div class="flex justify-center p-2">
-                <h1 class="text-center text-white text-xl font-bold p-2">
-                    Describe the component of your choice with its colors and states.
-                </h1>
-            </div>
-           
+    </header>
+    
+      <main class="flex flex-wraph-100 m-4 w-100 items-center mt-[96px] justify-center gap-12">
+        <div class="flex flex-col gap-8  max-w-7xl ">
+          <div class="flex justify-center p-2 w-full">
+            <h1 class="text-left text-white text-xl font-bold p-2">
+              ¡Bienvenido a nuestra página de generación de elementos HTML estilizados con <span class="font-semibold text-yellow-500"> Tailwind CSS </span>utilizando inteligencia artificial!<br>
+              ¿Te gustaría simplificar el proceso de crear y estilizar elementos HTML para tus proyectos web? Nuestra herramienta combina la potencia de la inteligencia artificial con la versatilidad de Tailwind CSS para ofrecerte una forma rápida y sencilla de generar elementos HTML estilizados.<br>
+            </h1>
+          </div>
+          <div class="flex flex-col justify-center p-6 w-full border rounded-2xl">
+            <h1 class="text-center text-white text-xl font-bold p-2">
+              Describe el elemento html con sus propiedades y estados
+            </h1>
             <form class="flex gap-2 w-full"> 
                 <input 
                 type="text" 
                 id="pregunta" 
-                placeholder="Example: red button with white letters, with hover and animation." 
+                placeholder="Ejemplo: Botón con gradiente rojo y verde con animación" 
                 class="flex w-full font-bold p-2 mt-4 rounded-3xl bg-white text-black"></input>
                 <button 
                 id="boton" 
@@ -77,17 +92,30 @@
                 Send
                 </button>   
             </form>
-            <section class="flex justify-center mx-auto">
+            <section class="flex justify-center mx-auto mt-6">
                 <div id="loading" class="text-white animate-pulse"></div>
                 <div id="codeBoton"></div>
             </section>
             <div id="divCode" class="justify-center w-100 mt-24 bg-slate-600 p-4 rounded-2xl border-2 hidden">
-                <code id="code" class="text-white"></code>
+                <code id="code" class="text-white select-all"></code>
             </div>
-            
+          </div>
+           
+            <div class="flex justify-center p-2 w-full">
+              <h1 class="text-left text-white text-xl font-bold p-2">
+                Con solo describir tus necesidades, nuestra IA puede generar el código HTML correspondiente y aplicar estilos de Tailwind CSS de manera automática. Ya no necesitas preocuparte por escribir clases de estilos o recordar la sintaxis adecuada. <br>Deja que nuestra herramienta lo haga por ti.
+                
+                ¿Necesitas un botón con un estilo específico, una tarjeta con un diseño particular o cualquier otro elemento HTML con estilos personalizados? <br> Solo descríbe lo que necesitas y nuestra IA se encargará de generar el código HTML y aplicar los estilos de Tailwind CSS según tus especificaciones.
+                
+                Nuestra herramienta es fácil de usar y extremadamente flexible.<br> Puedes personalizar cada aspecto de tus elementos HTML y ver los cambios de manera instantánea. Además, al utilizar Tailwind CSS, tienes acceso a una amplia gama de estilos predefinidos que pueden adaptarse a cualquier diseño.
+                
+              </h1>
+          </div>
         </div>
       </main>
-      <footer class='fixed bottom-0 w-full bg-gray-900 text-white text-center p-4'>JaWeB Components</footer>
+     <footer class='fixed bottom-0 w-full bg-gray-900 text-white text-center p-4'>
+        <span class="before:content">JaWeB Components</span>
+      </footer>
       <script type="module" src="/designia.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>

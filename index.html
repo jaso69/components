@@ -1,14 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Jaweb.es is a component generator based on Tailwind CSS that allows you to create user interfaces quickly and easily.">
-    <meta name="keywords" content="jaweb, component generator, Tailwind CSS, user interfaces, web design">
+    <meta name="description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. Seleccione el elemento, su estado y aplique las reglas CSS a su gusto, optimizando sus proyectos web de manera eficaz y rápida.">    <meta name="keywords" content="jaweb, component generator, Tailwind CSS, user interfaces, web design">
+    <meta name="keywords" content="HTML, Tailwind CSS, Generador HTML, Diseño Web, JaWeb, CSS, Desarrollo Web">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaweb.es/">
+    <meta property="og:title" content="Generador de Elementos HTML con Tailwind CSS - JaWeb">
+    <meta property="og:description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. Seleccione el elemento, su estado y aplique las reglas CSS a su gusto, optimizando sus proyectos web de manera eficaz y rápida.">
+    <meta property="og:image" content="https://jaweb.es/image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://jaweb.es/">
+    <meta name="twitter:title" content="Generador de Elementos HTML con Tailwind CSS - JaWeb">
+    <meta name="twitter:description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. Seleccione el elemento, su estado y aplique las reglas CSS a su gusto, optimizando sus proyectos web de manera eficaz y rápida.">
+    <meta name="twitter:image" content="https://jaweb.es/image.png">
     <meta name="author" content="@joseonieva2">
-    <title>JaWeB Components</title>
+    <title>Generador de Elementos HTML con Tailwind CSS - JaWeb</title>
     <style>
       label{
         color: beige;
@@ -23,11 +33,11 @@
   </head>
   <body class="bg-gray-900">
     <header class="fixed top-0 flex w-100 h-100 justify-center"> 
-      <nav class="bg-gradient-to-r from-black to-gray-300 dark:bg-gray-900 dark:border-gray-700 w-screen">
+      <nav class=" dark:bg-gray-900 w-screen">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="https://jaweb.es" class="flex items-center space-x-3 rtl:space-x-reverse">
               <img src="/favicon.svg" class="h-8" alt="Flowbite Logo" />
-              <span class="font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-red-500 to-lime-500">JaWeB Components</span>
+              <span class="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-red-500 to-lime-500">JaWeB Generador Elementos Tailwindcss</span>
           </a>
           <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
@@ -36,27 +46,27 @@
               </svg>
           </button>
           <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-            <ul class="flex flex-col bg-gradient-to-r from-gray-500 to-gray-300 font-medium p-4 md:p-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul class="flex flex-col font-medium p-4 md:p-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <a href="#" class="block py-2 px-3 text-white rounded md:bg-transparent md:text-white md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
-              </li>
-              <li>
-                  <button id="drop" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 font-semibold bg-clip-text bg-gradient-to-r text-transparent from-sky-900 to-blue-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                    HTML Element 
-                    <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                    </svg>
-                  </button>
-                  <!-- Dropdown menu -->
-                  <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                      <ul class="py-2 text-sm bg-gray-900 text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                        <li>
-                          <button 
-                          id="buttonEl" 
-                          class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
-                          button
-                          </button>
-                        </li>
+                <button id="drop" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 font-semibold bg-clip-text bg-gradient-to-r text-transparent from-sky-400 to-blue-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                  HTML Element 
+                  <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                  <ul class="py-2 text-sm bg-gray-900 text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                    <li>
+                      <button 
+                      id="buttonEl" 
+                      class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
+                      button
+                    </button>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-2 px-3 text-white rounded md:bg-transparent md:text-white md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
+                  </li>
                         <li>
                           <button 
                           id="aEl" 
@@ -173,7 +183,7 @@
                   </div>
               </li>
               <li>
-                <button id="dropStatus" data-dropdown-toggle="dropdownNavbar1" class="flex items-center justify-between w-full py-2 px-3 font-semibold bg-clip-text bg-gradient-to-r text-transparent from-sky-800 to-blue-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                <button id="dropStatus" data-dropdown-toggle="dropdownNavbar1" class="flex items-center justify-between w-full py-2 px-3 font-semibold bg-clip-text bg-gradient-to-r text-transparent from-sky-400 to-blue-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
                   HTML Status 
                   <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
@@ -221,12 +231,12 @@
                 </div>
             </li>
               <li>
-                <a href="/designia.html" class="block py-2 px-3 text-slate-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                <a href="/designia.html" class="block py-2 px-3 text-slate-300 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                   AI Design
                 </a>
               </li>
               <li>
-                <a href="/biblio.html" class="block py-2 px-3 text-gray-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                <a href="/biblio.html" class="block py-2 px-3 text-gray-300 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                   Gallery
                 </a>
               </li>
@@ -337,6 +347,13 @@
       
       <div class="flex flex-wrap gap-4 justify-center border rounded-2xl p-4 bg-slate-900">
 
+        <section class="flex justify-center content-center">
+          <div class="flex flex-col gap-2 p-2">
+            <label for="carets" class="text-center">Caret Color</label>
+            <select name="carets" id="carets"></select>
+          </div>
+        </section>
+        
         <section class="flex justify-center content-center">
           <div class="flex flex-col gap-2 p-2">
             <label for="cursors" class="text-center">Cursor</label>
@@ -547,11 +564,11 @@
         <p id="warningTheme" class="text-xs font-bold text-yellow-600 border-2 p-2 rounded-2xl hidden"></p>
       </div>
 
-      <div class="flex justify-center content-center">
+      <div class="flex justify-center content-center h-full w-full">
         <iframe id="iframe" src="./preview.html" frameborder="0"></iframe>
       </div>
       <div class="flex justify-center w-100 bg-slate-600 p-4 rounded-2xl border-2">
-        <code id="code" class="text-white"></code>
+        <code id="code" class="text-white select-all"></code>
       </div>
       
       <div id="rendered" class="flex justify-center content-center">
@@ -559,7 +576,18 @@
         <span id="tooltip" class="text-xs opacity-0 absolute text-lime-600 hidden">Copied to clipboard</span>
       </div>
     </main>
-    <footer class='fixed bottom-0 w-full bg-gray-900 text-white text-center p-4'>JaWeB Components</footer>
+    <footer class='w-full bg-gray-900 text-white text-center p-4 mb-8'>
+      <header>
+        JaWeB Components
+      </header> 
+      <section class="mt-4 text-left">
+        <p>¿Estás en búsqueda de una manera eficiente y personalizable de crear componentes para tu sitio web? ¡No busques más! Te presentamos una plataforma revolucionaria que te permite <span class="font-semibold text-lime-600">generar elementos HTML usando Tailwind CSS </span> de una manera intuitiva y completamente personalizable. Nuestro generador te ofrece la libertad de seleccionar el tipo de elemento HTML que necesitas, así como su estado (como activo, hover, deshabilitado, etc.), y aplicar las reglas CSS específicas que deseas.
+
+          Con solo unos pocos clics, puedes diseñar botones, tarjetas, formularios y mucho más con la facilidad y la flexibilidad que ofrece Tailwind CSS. Esta herramienta es ideal tanto para desarrolladores experimentados como para principiantes que buscan agilizar su flujo de trabajo y mejorar la consistencia de su diseño sin sacrificar la calidad ni la personalización.
+          
+          Ya sea que estés trabajando en un proyecto personal o desarrollando a gran escala, nuestra plataforma se adapta a tus necesidades ofreciéndote una forma optimizada de crear componentes visualmente atractivos y responsivos. ¡Prueba hoy mismo nuestro generador y lleva tus proyectos web al siguiente nivel!</p>
+      </section>  
+    </footer>
     <script type="module" src="/main.js"></script>
     <script type="module" src="/menu.js"></script>
   </body>

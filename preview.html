@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>preview</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
@@ -18,12 +19,13 @@
 </head>
 <body>
     <div class="flex justify-center bg-slate-200 w-100 h-screen items-center dark:bg-slate-900">
-        <div id="pCheck">
-            <button id="pre">Texto</button>
+        <button id="pre">Texto</button>
+        <div id="pCheck" class="hidden">
         </div>
         <sapn class="hidden" id="check">Chexbox</sapn>
         <p id="pRadio" class="hidden">Radio Button</p>
     </div>
+
     <script src="./preview.js"></script>
 </body>
 </html>
