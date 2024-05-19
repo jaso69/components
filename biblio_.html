@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Jaweb.es is a component generator based on Tailwind CSS that allows you to create user interfaces quickly and easily.">
+    <meta name="keywords" content="jaweb, component generator, Tailwind CSS, user interfaces, web design">
+    <meta name="author" content="@joseonieva2">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {},
+            },
+            plugins: [],
+    }
+    </script>
+    <title>JaWeB Gallery</title>
+</head>
+<body class="bg-gray-900">
+    <header class="fixed top-0 flex w-100 h-100 justify-center"> 
+        <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-screen">
+          <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="https://jaweb.es" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="/favicon.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-red-500 to-lime-500">JaWeB Components</span>
+            </a>
+            <button id="drop" data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+              <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                  <a href="/index.html" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent hover:text-blue-700 md:text-gray-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent">Home</a>
+                </li>
+                <li>
+                  <a href="/designia.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    AI Design
+                  </a>
+                </li>
+                <li>
+                  <a href="/biblio.html" aria-current="page" class="block py-2 px-3 text-blue-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    Gallery
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+        <button id="theme" class="fixed right-0 bottom-0 py-2 px-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-up" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            <path d="M12 5l0 -2" />
+            <path d="M17 7l1.4 -1.4" />
+            <path d="M19 12l2 0" />
+            <path d="M17 17l1.4 1.4" />
+            <path d="M12 19l0 2" />
+            <path d="M7 17l-1.4 1.4" />
+            <path d="M6 12l-2 0" />
+            <path d="M7 7l-1.4 -1.4" />
+          </svg>
+        </button>
+  
+    </header>
+    <main class="flex flex-wrap h-100 m-4 w-100 items-center mt-[96px] mb-[96px] justify-center gap-12">
+        
+      <div class="flex flex-col gap-10 box-content w-64 h-[440px] items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+        <div id="bt1" class="flex flex-col gap-10">
+          <button class='bg-gradient-to-r from-red-500 to-blue-500 hover:from-blue-500 hover:to-red-500 text-white font-bold py-2 px-4 rounded'>Click here to view code</button>
+          <button class='bg-gradient-to-r from-green-400 to-orange-500 hover:from-green-500 hover:to-orange-600 text-white font-bold py-2 px-4 rounded'>Click here to view code</button>
+          <button class='bg-gradient-to-r from-fuchsia-500 to-indigo-500 hover:from-fuchsia-700 hover:to-indigo-700 text-white font-bold py-2 px-4 rounded'>Click here to view code</button>
+          <button class='bg-gradient-to-r from-black to-white animate-pulse text-white font-bold py-2 px-4 rounded'>Click here to view code</button>
+          <button class='bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-700 hover:to-green-700 text-white font-bold py-2 px-4 rounded'>Click here to view code</button>
+        </div>
+        <div id="divCode1" class="absolute left-5 top-20 gap-4 justify-center w-100 bg-slate-600 p-4 rounded-2xl border-2 hidden">
+          <div class="relative flex flex-row-reverse text-red-500 cursor-pointer p-2 border-8 border-double border-red-500 rounded-2xl font-bold w-16 justify-center">Close</div>
+          <div class="flex mb-4 justify-center"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+        </div>
+      </div>
+      <div class="flex flex-col gap-10 box-content w-64 h-[440px] items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+        <div id="bt2" class="flex flex-col gap-10">
+          <button class="font-semibold text-sky-600 p-2 border-s-8 rounded-3xl shadow-inner shadow-sky-600 border-sky-600 active:rotate-0 active:scale-90 hover:animate-none hover:shadow-sky-400 hover:border-sky-400 hover:text-sky-400">Click here to view code</button>
+          <button class="font-semibold text-indigo-600 p-2 border-s-8 rounded-3xl shadow-inner shadow-indigo-600 border-indigo-600 active:rotate-0 active:scale-90 hover:animate-none hover:shadow-sky-500 hover:border-sky-500 hover:text-sky-500">Click here to view code</button>
+          <button class="font-semibold text-teal-600 p-2 border-s-8 rounded-3xl shadow-inner shadow-teal-600 border-teal-600 active:rotate-0 active:scale-90 hover:animate-none hover:shadow-teal-400 hover:border-teal-400 hover:text-teal-400">Click here to view code</button>
+          <button class="font-semibold text-orange-600 p-2 border-s-8 rounded-3xl shadow-inner shadow-orange-600 border-orange-600 active:rotate-0 active:scale-90 hover:animate-none hover:shadow-orange-400 hover:border-orange-400 hover:text-orange-400">Click here to view code</button>
+          <button class="font-semibold text-lime-600 p-2 border-s-8 rounded-3xl shadow-inner shadow-lime-600 border-lime-600 active:rotate-0 active:scale-90 hover:animate-none hover:shadow-lime-400 hover:border-lime-400 hover:text-lime-400">Click here to view code</button>
+        </div>
+        <div id="divCode2" class="absolute left-5 top-20 gap-4 justify-center w-100 bg-slate-600 p-4 rounded-2xl border-2 hidden">
+          <div class="relative flex flex-row-reverse text-red-500 cursor-pointer p-2 border-8 border-double border-red-500 rounded-2xl font-bold w-16 justify-center">Close</div>
+          <div class="flex justify-center"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+        </div>
+      </div>
+      <div class="flex flex-col gap-10 box-content w-64 h-[440px] items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+        <div id="bt3" class="flex flex-col gap-10">  
+          <button class="font-semibold text-red-600 hover:text-red-500 p-2 border-x-8 border-solid rounded-none hover:rounded-t-full hover:p-2 active:scale-90">Click here to view code</button> 
+          <button class="font-semibold text-orange-600 hover:text-orange-500 p-2 border-x-8 border-solid rounded-none hover:rounded-t-full hover:p-2 active:scale-90">Click here to view code</button> 
+          <button class="font-semibold text-lime-600 hover:text-lime-500 p-2 border-x-8 border-solid rounded-none hover:rounded-t-full hover:p-2 active:scale-90">Click here to view code</button> 
+          <button class="font-semibold text-sky-600 hover:text-sky-500 p-2 border-x-8 border-solid rounded-none hover:rounded-t-full hover:p-2 active:scale-90">Click here to view code</button> 
+          <button class="font-semibold text-gray-600 hover:text-gray-500 p-2 border-x-8 border-solid rounded-none hover:rounded-t-full hover:p-2 active:scale-90">Click here to view code</button> 
+          <button class="text-white font-bold p-4 bg-gradient-to-r from-orange-500 via-lime-500 to-sky-600 bg-clip-border border-0 border-solid rounded-2xl hover:from-red-500 hover:via-cyan-500 hover:to-purple-600 hover:animate-pulse hover:duration-300 hover:font-semibold hover:text-base text-base">click here to copy code</button>
+        </div>
+        <div id="divCode3" class="absolute left-5 top-20 gap-4 justify-center w-100 bg-slate-800 p-4 rounded-2xl border-2 hidden">
+          <div class="relative flex flex-row-reverse text-red-500 cursor-pointer p-2 border-8 border-double border-red-500 rounded-2xl font-bold w-16 justify-center">Close</div>
+          <div class="flex justify-center"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+        </div>  
+        </div>
+      <div class="flex flex-col gap-10 box-content w-64 h-[440px] items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+        <div id="bt4" class="flex flex-col gap-10">  
+          <button class="font-semibold text-red-600 border-8 p-2 border-double rounded-t-3xl hover:text-red-500 hover:rounded-b-3xl active:scale-95 hover:duration-150">Click here to view code</button>        
+          <button class="font-semibold text-orange-600 border-8 p-2 border-double rounded-t-3xl hover:text-orange-500 hover:rounded-b-3xl active:scale-95 hover:duration-150">Click here to view code</button>        
+          <button class="font-semibold text-lime-600 border-8 p-2 border-double rounded-t-3xl hover:text-lime-500 hover:rounded-b-3xl active:scale-95 hover:duration-150">Click here to view code</button>        
+          <button class="font-semibold text-sky-600 border-8 p-2 border-double rounded-t-3xl hover:text-sky-500 hover:rounded-b-3xl active:scale-95 hover:duration-150">Click here to view code</button>        
+          <button class="font-semibold text-gray-600 border-8 p-2 border-double rounded-t-3xl hover:text-gray-500 hover:rounded-b-3xl active:scale-95 hover:duration-150">Click here to view code</button>        
+        </div>
+        <div id="divCode4" class="absolute left-1 top-20 gap-4 justify-center w-100 bg-slate-800 p-4 rounded-2xl border-2 hidden">
+          <div class="relative flex flex-row-reverse text-red-500 cursor-pointer p-2 border-8 border-double border-red-500 rounded-2xl font-bold w-16 justify-center">Close</div>
+          <div class="flex justify-center"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+        </div>     
+      </div>
+
+      <div class="flex flex-col gap-10 box-content w-64 h-[440px] items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+        <div id="bt5" class="flex flex-col gap-10">  
+          <button id="boton1" class="text-white border-y-8 border-double rounded-2xl p-2 font-semibold shadow-white shadow-2xl hover:rounded-full hover:shadow-lime-500 active:scale-90">Click here to view code</button>
+          <button id="boton3" class="text-white font-semibold border-y-8 border-dotted rounded-full p-2 hover:animate-none hover:text-lime-600 hover:rotate-180 hover:brightness-125 active:scale-90">Click here to view code</button>
+          <button id="boton4" class="text-white font-medium border-y-4 border-dashed rounded-s-full p-2 hover:border-x-4 hover:brightness-125 hover:rotate-12 active:scale-90">Click here to view code</button>
+          <button id="boton5" class="text-white font-semibold p-2 border-b-8 border-double hover:rounded-full hover:shadow-white hover:shadow-md active:scale-90">Click here to view code</button>
+          <button id="boton6" class="text-white font-semibold border-b-8 border-double rounded-full p-2 shadow-white shadow hover:text-lime-600 hover:brightness-150 active:translate-y-1">Click here to view code</button>        
+        </div>
+        <div id="divCode5" class="absolute left-1 top-20 gap-4 justify-center w-100 bg-slate-800 p-4 rounded-2xl border-2 hidden">
+          <div class="relative flex flex-row-reverse text-red-500 cursor-pointer p-2 border-8 border-double border-red-500 rounded-2xl font-bold w-16 justify-center">Close</div>
+          <div class="flex justify-center"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+          <div class="flex justify-center mb-4 m-4"></div>
+          <code class="flex text-white border-2 rounded-2xl p-4 mb-4 mt-4"></code>
+        </div>
+      </div>
+
+      <div class="flex flex-col box-content w-64 flex-wrap gap-10 items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+          <button id="boton21" class="text-white font-bold border-4 bg-red-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-150 hover:text-red-600 hover:bg-white hover:border-red-600 hover:duration-300">Click here to view code</button>
+          <button id="boton22" class="text-white font-bold border-4 bg-green-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-150 hover:text-green-600 hover:bg-white hover:border-green-600 hover:duration-300">Click here to view code</button>
+          <button id="boton23" class="text-white font-bold border-4 bg-blue-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-150 hover:text-blue-600 hover:bg-white hover:border-blue-600 hover:duration-300">Click here to view code</button>
+          <button id="boton24" class="text-white font-bold border-4 bg-orange-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-150 hover:text-orange-600 hover:bg-white hover:border-orange-600 hover:duration-300">Click here to view code</button>
+          <button id="boton25" class="text-white font-bold border-4 bg-yellow-500 p-4 rounded-2xl active:translate-y-2 hover:brightness-150 hover:text-gray-600 hover:bg-white hover:border-yellow-600 hover:duration-300">Click here to view code</button>
+          <button id="boton26" class="text-white font-bold border-4 bg-gray-500 p-4 rounded-2xl active:translate-y-2 hover:brightness-150 hover:text-gray-600 hover:bg-white hover:border-gray-600 hover:duration-300">Click here to view code</button>
+          <button id="boton27" class="text-white font-bold border-4 bg-purple-500 p-4 rounded-2xl active:translate-y-2 hover:brightness-150 hover:text-purple-600 hover:bg-white hover:border-purple-600 hover:duration-300">Click here to view code</button>
+          <button id="boton28" class="text-white font-bold border-4 bg-indigo-500 p-4 rounded-2xl active:translate-y-2 hover:brightness-150 hover:text-indigo-600 hover:bg-white hover:border-indigo-600 hover:duration-300">Click here to view code</button>
+          <button id="boton29" class="text-white font-bold border-4 bg-pink-500 p-4 rounded-2xl active:translate-y-2 hover:brightness-150 hover:text-pink-600 hover:bg-white hover:border-pink-600 hover:duration-300">Click here to view code</button>
+      </div>
+
+      <div class="flex flex-col box-content w-64 flex-wrap gap-10 items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+          <button id="boton30" class="text-white font-bold border-4 bg-red-600 p-4 rounded-full active:translate-y-2 hover:brightness-150 hover:text-red-600 hover:bg-white hover:border-red-600 hover:duration-300">Click here to view code</button>
+          <button id="boton31" class="text-white font-bold border-4 bg-green-600 p-4 rounded-full active:translate-y-2 hover:brightness-150 hover:text-green-600 hover:bg-white hover:border-green-600 hover:duration-300">Click here to view code</button>
+          <button id="boton32" class="text-white font-bold border-4 bg-blue-600 p-4 rounded-full active:translate-y-2 hover:brightness-150 hover:text-blue-600 hover:bg-white hover:border-blue-600 hover:duration-300">Click here to view code</button>
+          <button id="boton33" class="text-white font-bold border-4 bg-orange-600 p-4 rounded-full active:translate-y-2 hover:brightness-150 hover:text-orange-600 hover:bg-white hover:border-orange-600 hover:duration-300">Click here to view code</button>
+          <button id="boton34" class="text-white font-bold border-4 bg-yellow-500 p-4 rounded-full active:translate-y-2 hover:brightness-150 hover:text-gray-600 hover:bg-white hover:border-yellow-600 hover:duration-300">Click here to view code</button>
+          <button id="boton35" class="text-white font-bold border-4 bg-gray-500 p-4 rounded-full active:translate-y-2 hover:brightness-150 hover:text-gray-600 hover:bg-white hover:border-gray-600 hover:duration-300">Click here to view code</button>
+          <button id="boton36" class="text-white font-bold border-4 bg-purple-500 p-4 rounded-full active:translate-y-2 hover:brightness-150 hover:text-purple-600 hover:bg-white hover:border-purple-600 hover:duration-300">Click here to view code</button>
+          <button id="boton37" class="text-white font-bold border-4 bg-indigo-500 p-4 rounded-full active:translate-y-2 hover:brightness-150 hover:text-indigo-600 hover:bg-white hover:border-indigo-600 hover:duration-300">Click here to view code</button>
+          <button id="boton38" class="text-white font-bold border-4 bg-pink-500 p-4 rounded-full active:translate-y-2 hover:brightness-150 hover:text-pink-600 hover:bg-white hover:border-pink-600 hover:duration-300">Click here to view code</button>
+      </div>
+
+      <div class="flex flex-col box-content w-64 flex-wrap gap-10 items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+          <button id="boton39" class="text-white font-bold border-4 border-red-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-red-600 hover:border-white hover:duration-300">Click here to view code</button>
+          <button id="boton40" class="text-white font-bold border-4 border-green-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-green-600 hover:border-white hover:duration-300">Click here to view code</button>
+          <button id="boton41" class="text-white font-bold border-4 border-blue-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-blue-600 hover:border-white hover:duration-300">Click here to view code</button>
+          <button id="boton42" class="text-white font-bold border-4 border-orange-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-orange-600 hover:border-white hover:duration-300">Click here to view code</button>
+          <button id="boton43" class="text-white font-bold border-4 border-yellow-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-yellow-600 hover:border-white hover:duration-300">Click here to view code</button>
+          <button id="boton44" class="text-white font-bold border-4 border-gray-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-gray-600 hover:border-white hover:duration-300">Click here to view code</button>
+          <button id="boton45" class="text-white font-bold border-4 border-purple-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-purple-600 hover:border-white hover:duration-300">Click here to view code</button>
+          <button id="boton46" class="text-white font-bold border-4 border-indigo-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-indigo-600 hover:border-white hover:duration-300">Click here to view code</button>
+          <button id="boton47" class="text-white font-bold border-4 border-pink-600 p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-pink-600 hover:border-white hover:duration-300">Click here to view code</button>
+      </div>
+
+      <div class="flex flex-col box-content w-64 flex-wrap gap-10 items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+          <button id="boton48" class="text-red-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:border-red-600 hover:duration-300">Click here to view code</button>
+          <button id="boton49" class="text-green-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:border-green-600 hover:duration-300">Click here to view code</button>
+          <button id="boton50" class="text-blue-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:border-blue-600 hover:duration-300">Click here to view code</button>
+          <button id="boton51" class="text-orange-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:border-orange-600 hover:duration-300">Click here to view code</button>
+          <button id="boton52" class="text-yellow-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:border-yellow-600 hover:duration-300">Click here to view code</button>
+          <button id="boton53" class="text-gray-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:border-gray-600 hover:duration-300">Click here to view code</button>
+          <button id="boton54" class="text-purple-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:border-purple-600 hover:duration-300">Click here to view code</button>
+          <button id="boton55" class="text-indigo-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:border-indigo-600 hover:duration-300">Click here to view code</button>
+          <button id="boton56" class="text-pink-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:border-pink-600 hover:duration-300">Click here to view code</button>
+      </div>
+
+      <div class="flex flex-col box-content w-64 flex-wrap gap-10 items-center justify-center border-red-200 border-2 p-6 rounded-3xl">
+        <button id="boton48" class="text-red-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:bg-red-600 hover:duration-300">Click here to view code</button>
+        <button id="boton49" class="text-green-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:bg-green-600 hover:duration-300">Click here to view code</button>
+        <button id="boton50" class="text-blue-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:bg-blue-600 hover:duration-300">Click here to view code</button>
+        <button id="boton51" class="text-orange-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:bg-orange-600 hover:duration-300">Click here to view code</button>
+        <button id="boton52" class="text-yellow-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-red-900 hover:bg-yellow-600 hover:duration-300">Click here to view code</button>
+        <button id="boton53" class="text-gray-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:bg-gray-600 hover:duration-300">Click here to view code</button>
+        <button id="boton54" class="text-purple-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:bg-purple-600 hover:duration-300">Click here to view code</button>
+        <button id="boton55" class="text-indigo-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:bg-indigo-600 hover:duration-300">Click here to view code</button>
+        <button id="boton56" class="text-pink-600 font-bold border-4 border-white p-4 rounded-2xl active:translate-y-2 hover:brightness-200 hover:text-white hover:bg-pink-600 hover:duration-300">Click here to view code</button>
+      </div>
+      <p class="flex items-center gap-2 text-sky-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-sky-500 text-xs">
+        <img src="/info.svg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="flex items-center gap-2 text-cyan-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-cyan-500 text-xs">
+        <img src="/alert.svg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="flex items-center gap-2 text-blue-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-blue-500 text-xs">
+        <img src="/skull.svg">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-indigo-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-indigo-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-teal-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-teal-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-emerald-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-emerald-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-green-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-green-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-lime-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-lime-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-yellow-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-yellow-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-amber-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-amber-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-orange-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-orange-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-red-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-red-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-violet-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-violet-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-purple-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-purple-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-fuchsia-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-fuchsia-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-pink-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-pink-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <p class="text-rose-500 font-medium bg-transparent p-2 border-2 rounded-2xl border-rose-500 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rerum ullam nesciunt fugit fugiat atque, assumenda, et, magni optio veritatis in exercitationem maxime. Officiis at repellat alias fugiat tempore et!</p>
+      <div class="flex flex-col gap-4">
+        <input type='checkbox' class='form-checkbox h-16 w-16 text-blue-600 border-8 border-blue-600 rounded-2xl active:ring-orange-500'>
+        <input type="checkbox" id="boton" class="text-blue-600 form-checkbox border-orange-500 border-4 w-16 h-16 rounded-3xl active:ring-orange-500">
+        <input type="checkbox" id="boton" class="text-blue-600 form-checkbox w-16 h-16 border-8 border-amber-500 rounded-full bg-gradient-to-r from-red-600 to-yellow-400 active:ring-orange-500">
+      </div>
+    </main>
+    <footer class='fixed bottom-0 w-full bg-gray-900 text-white text-center p-4'>JaWeB Components</footer>
+    <script type="module" src="/biblio.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+</html>

@@ -2,9 +2,10 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <meta content="index,follow" name="robots">
+    <link href="https://jaweb.es" rel="canonical">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. Seleccione el elemento, su estado y aplique las reglas CSS a su gusto, optimizando sus proyectos web de manera eficaz y rápida.">    <meta name="keywords" content="jaweb, component generator, Tailwind CSS, user interfaces, web design">
     <meta name="keywords" content="HTML, Tailwind CSS, Generador HTML, Diseño Web, JaWeb, CSS, Desarrollo Web">
     <meta property="og:type" content="website">
@@ -18,6 +19,7 @@
     <meta name="twitter:description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. Seleccione el elemento, su estado y aplique las reglas CSS a su gusto, optimizando sus proyectos web de manera eficaz y rápida.">
     <meta name="twitter:image" content="https://jaweb.es/image.png">
     <meta name="author" content="@joseonieva2">
+    <link rel="stylesheet" href="style.css">
     <title>Generador de Elementos HTML con Tailwind CSS - JaWeb</title>
     <style>
       label{
@@ -37,7 +39,9 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="https://jaweb.es" class="flex items-center space-x-3 rtl:space-x-reverse">
               <img src="/favicon.svg" class="h-8" alt="Flowbite Logo" />
-              <span class="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-red-500 to-lime-500">JaWeB Generador Elementos Tailwindcss</span>
+              <span class="font-bold text-sm md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-red-500 to-lime-500">
+                JaWeB Generador Tailwindcss
+              </span>
           </a>
           <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
@@ -229,15 +233,17 @@
                 </div>
               </li>
               <li>
-                <a href="#" class="block py-2 px-3 text-white rounded md:bg-transparent md:text-white md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
+                <a href="#" class="block py-2 px-3 text-black rounded md:bg-transparent md:text-white md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
+                  Home
+                </a>
               </li>
               <li>
-                <a href="/designia.html" class="block py-2 px-3 text-slate-300 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                <a href="/designia.html" class="block py-2 px-3 text-lime-400 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                   AI Design
                 </a>
               </li>
               <li>
-                <a href="/biblio.html" class="block py-2 px-3 text-gray-300 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                <a href="/biblio.html" class="block py-2 px-3 text-lime-400 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                   Gallery
                 </a>
               </li>
@@ -595,6 +601,9 @@
           
           Ya sea que estés trabajando en un proyecto personal o desarrollando a gran escala, nuestra plataforma se adapta a tus necesidades ofreciéndote una forma optimizada de crear componentes visualmente atractivos y responsivos. ¡Prueba hoy mismo nuestro generador y lleva tus proyectos web al siguiente nivel!</p>
       </section>  
+      <h1 class="text-center text-3xl font-semibold text-lime-600 mt-4">
+        info@jaweb.es
+      </h1>
     </footer>
     <script type="module" src="/main.js"></script>
     <script type="module" src="/menu.js"></script>
