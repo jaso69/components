@@ -2,6 +2,11 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const submit = document.querySelector('#submit');
 
+const user = localStorage.getItem('user')
+if(user && user !== 'undefined'){
+  window.location.href = 'gallery.html'
+}
+
 email.addEventListener('input', e => {
   const emailValue = email.value;
   if (emailValue.length > 0) {
@@ -40,8 +45,8 @@ submit.addEventListener('click', e => {
     .then(res => {
        
       if (res.user) {
-        localStorage.setItem('user', JSON.stringify(res.user));
-        window.location.href = '/';
+        localStorage.setItem('user', JSON.stringify(res.user._id));
+        window.location.href = 'gallery.html';
       } else {
         email.classList.add('border-red-500');
         password.classList.add('border-red-500');

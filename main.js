@@ -20,10 +20,16 @@ clases_el.forEach((el) => {
 })
 
 let boton = document.querySelector('#boton')
+const save = document.querySelector('#save')
 const menuHtml = new Collapse(drop)
 let dark_op = false;
 let tmp_theme = true;
 let status = 'default';
+
+const user = localStorage.getItem('user')
+if (user && user !== 'undefined') {
+  save.classList.remove('hidden')
+}
 
 thicknes.addEventListener('change', () => {change(thicknes.value, thicknes.name)})
 style.addEventListener('change', () => {change(style.value, style.name)})
@@ -280,6 +286,7 @@ function addClass(e, statusClass){
 
 function copy(){
   co.textContent = boton.outerHTML
+  localStorage.setItem('gallery', co.textContent)
   boton.addEventListener('click', () => {
     const temp = document.createElement('input')
     body.append(temp)

@@ -3,6 +3,7 @@ const password = document.querySelector('#password');
 const nombre = document.querySelector('#nombre');
 const submit = document.querySelector('#submit');
 const errorState = document.querySelector('#errorState');
+const password1 = document.querySelector('#password1');
 
 email.addEventListener('input', e => {
   const emailValue = email.value;
@@ -38,6 +39,10 @@ function esCorreoValido(correo) {
 
 submit.addEventListener('click', e => {
   e.preventDefault();
+  if(password1.value !== password.value) {
+    password1.classList.add('border-red-500');
+    return;
+  }
   if(!esCorreoValido(email.value) || password.value.length < 4 || nombre.value.length < 1) { 
     errorState.classList.remove('hidden');
     return; }

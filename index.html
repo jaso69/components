@@ -234,7 +234,7 @@
               </li>
               <li>
                 <a href="#" class="block py-2 px-3 text-black rounded md:bg-transparent md:text-white md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
-                  Home
+                  Generador
                 </a>
               </li>
               <li>
@@ -244,7 +244,7 @@
               </li>
               <li>
                 <a href="/biblio.html" class="block py-2 px-3 text-lime-400 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                  Gallery
+                  Galería
                 </a>
               </li>
             </ul>
@@ -581,12 +581,15 @@
       <div class="flex justify-center content-center h-full w-full">
         <iframe id="iframe" src="./preview.html" frameborder="0"></iframe>
       </div>
-      <div class="flex justify-center w-100 bg-slate-600 p-4 rounded-2xl border-2">
+      <div class="flex justify-center w-100 bg-slate-600 p-4 gap-4 rounded-2xl border-2">
+        <div>
+          <a href="gallerySave.html" id="save" class="bg-sky-700 text-lime-50 font-bold border-sky-500 animate-pulse p-2 rounded-xl border-2 hover:animate-none hidden">Guardar</a>
+        </div>
         <code id="code" class="text-white select-all"></code>
       </div>
       
       <div id="rendered" class="flex justify-center content-center">
-        <button id="boton">Click here to copy code</span></button>
+        <button id="boton">Copy code</span></button>
         <span id="tooltip" class="text-xs opacity-0 absolute text-lime-600 hidden">Copied to clipboard</span>
       </div>
     </main>
@@ -601,10 +604,11 @@
           
           Ya sea que estés trabajando en un proyecto personal o desarrollando a gran escala, nuestra plataforma se adapta a tus necesidades ofreciéndote una forma optimizada de crear componentes visualmente atractivos y responsivos. ¡Prueba hoy mismo nuestro generador y lleva tus proyectos web al siguiente nivel!</p>
       </section>  
-      <h1 class="text-center text-3xl font-semibold text-lime-600 mt-4">
+      <h1 class="text-center text-3xl font-semibold text-[#09f] dark:text-white mt-4">
         info@jaweb.es
       </h1>
     </footer>
+    
     <script type="module" src="/main.js"></script>
     <script type="module" src="/menu.js"></script>
   </body>
