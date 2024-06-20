@@ -3,15 +3,11 @@ const pCheck = document.querySelector('#pCheck')
 const check = document.querySelector('#check')
 const pRadio = document.querySelector('#pRadio')
 const html_theme = document.querySelector('html')
+const body = document.querySelector('body')
 
-if( localStorage.getItem('theme') === 'none' || 
-    localStorage.getItem('theme') === 'light'){
-    html_theme.classList.remove('dark')
-}
+if( localStorage.getItem('theme') === 'light'){ body.classList.remove('dark')}
 
-if(localStorage.getItem('theme') === 'dark'){
-    html_theme.classList.add('dark')
-}
+if(localStorage.getItem('theme') === 'dark'){ body.classList.add('dark') }
 
 if(localStorage.getItem('clase')){
     const clase = localStorage.getItem('clase')
@@ -26,7 +22,7 @@ if(localStorage.getItem('element')){
     if(el === 'input') { newEl.type = typel }
     if(el === 'number') { newEl.type = typel }
     if(el === 'checkbox') { newEl.type = typel }
-    newEl.textContent = 'Example'
+    newEl.textContent = 'JaWeB Generator'
     newEl.id = "pre"
     newEl.classList = pre.classList
     if(el === 'select'){ newEl.add(op()); newEl.add(op())}

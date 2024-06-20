@@ -1,26 +1,15 @@
 import './flowbite.min.js'
 
-const loading = document.querySelector('#loading')
-const pregunta = document.querySelector('#pregunta');
-const boton = document.querySelector('#boton')
-const codeBoton = document.querySelector('#codeBoton')
-const code = document.querySelector('#code')
-const divCode = document.querySelector('#divCode')
-const drop = document.querySelector('#drop')
-const save = document.querySelector('#save')
-const logout = document.querySelector('#logout')
-
-const user = localStorage.getItem('user')
-if (user && user !== 'undefined') {
-  save.classList.remove('hidden')
-  logout.classList.remove('hidden')
-} else{
-    save.classList.add('hidden')
-    logout.classList.add('hidden')
-    localStorage.removeItem('user')
-    localStorage.removeItem('proyecto')
-}
-
+const $ = (e) => document.querySelector(e)
+const loading = $('#loading')
+const pregunta = $('#pregunta');
+const boton = $('#boton')
+const codeBoton = $('#codeBoton')
+const code = $('#code')
+const divCode = $('#divCode')
+const drop = $('#drop')
+const save = $('#save')
+const logout = $('#logout')
 let prompt = {}
 let question = ''
 let message = []

@@ -21,594 +21,641 @@
     <meta name="author" content="@joseonieva2">
     <link rel="stylesheet" href="style.css">
     <title>Generador de Elementos HTML con Tailwind CSS - JaWeb</title>
-    <style>
-      label{
-        color: beige;
-      }
-      section{
-        padding: 8px;
-        border-width: 2px;
-        border-color: rgb(15, 84, 61);
-        border-radius: 20px;
-      }
-    </style>
   </head>
-  <body class="bg-gray-900">
-    <header class="fixed top-0 flex w-100 h-100 justify-center"> 
-      <nav class=" dark:bg-gray-900 w-screen">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="https://jaweb.es" class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="/favicon.svg" class="h-8" alt="Flowbite Logo" />
-              <span class="font-bold text-sm md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-red-500 to-lime-500">
-                JaWeB Generador Tailwindcss
-              </span>
-          </a>
-          <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
-              <span class="sr-only">Open main menu</span>
-              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-              </svg>
-          </button>
-          <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-            <ul class="flex flex-col font-medium p-4 md:p-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-gray-900 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <button id="drop" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 px-3 font-semibold bg-clip-text bg-gradient-to-r text-transparent from-sky-400 to-blue-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                  HTML Element 
-                  <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                  </svg>
-                </button>
-                <!-- Dropdown menu -->
-                <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                  <ul class="py-2 text-sm bg-gray-900 text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                    <li>
-                      <button 
-                      id="buttonEl" 
-                      class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
-                      button
-                    </button>
-                  </li>
-                 
-                        <li>
-                          <button 
-                          id="aEl" 
-                          class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
-                          a
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="divEl" 
-                          class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
-                          div
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="imgEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          img
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="pEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          p
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="spanEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          Span
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="h1El" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          h1
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="h2El" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          h2
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="h3El" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          h3
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="inputEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          Input Text
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="fileEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          File Input
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="numberEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          Number Input
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="labelEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          Label
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="selectEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          Select
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="textareaEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          Textarea
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="checkboxEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          Checkbox
-                          </button>
-                        </li>
-                        <li>
-                          <button 
-                          id="radioEl" 
-                          class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                          Radio
-                          </button>
-                        </li>
+  <body>
+      <div class="bg-zinc-50 dark:bg-slate-900">
+        <header class="fixed top-0 justify-center bg-zinc-50 dark:bg-slate-900"> 
+          <nav class=" dark:bg-gray-900 w-screen">
+              <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                  <a href="https://jaweb.es" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <template>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#33ff55" stroke="#09f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                      </svg>
+                    </template>
+                      <span class="font-bold text-sm md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-red-500 to-lime-500">
+                          JaWeB Generador Tailwindcss
+                      </span>
+                  </a>
+                  <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
+                      <span class="sr-only">Open main menu</span>
+                      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                      </svg>
+                  </button>
+                  <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                      <ul class="flex flex-col bg-slate-100 md:bg-slate-100 font-medium p-4 md:p-2 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                          <li>
+                              <a href="/index.html" class="block py-2 px-3 text-[#09f] md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
+                              Generador
+                              </a>
+                          </li>
+                          <li>
+                              <a 
+                              href="/designia.html" 
+                              class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                              >
+                              Generador IA
+                              </a>
+                          </li>
+                          <li>
+                              <button  class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                              Galeria
+                              </button>
+                          </li>
+                          <li>
+                              <button 
+                              class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                              Logout
+                              </button>
+                          </li>
+                          <li>
+                              <a 
+                              href="/login.html" 
+                              class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                              Login
+                              </a>
+                          </li>
+                          <li>
+                              <a href="/registro" class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                              Registro
+                              </a>
+                          </li>
+                          <li>
+                              <!-- <p v-show="autenticado" class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                              {{userName}}
+                              </p> -->
+                          </li>
+                          <li>
+                              <button id="darkMode">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                                </svg>
+                              </button>
+                              <button id="lightMode">
+                                <svg xmlns="http://www.w3.org/2000/svg" 
+                                  id="icon-tabler-brightness-up"
+                                  class="icon icon-tabler icon-tabler-brightness-up" 
+                                  width="32" 
+                                  height="32" 
+                                  viewBox="0 0 24 24" 
+                                  stroke-width="1.5" 
+                                  stroke="#fff"
+                                  fill="none" 
+                                  stroke-linecap="round" 
+                                  stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                                    <path d="M12 5l0 -2" />
+                                    <path d="M17 7l1.4 -1.4" />
+                                    <path d="M19 12l2 0" />
+                                    <path d="M17 17l1.4 1.4" />
+                                    <path d="M12 19l0 2" />
+                                    <path d="M7 17l-1.4 1.4" />
+                                    <path d="M6 12l-2 0" />
+                                    <path d="M7 7l-1.4 -1.4" />
+                                </svg>
+                              </button>
+                          </li>
                       </ul>
                   </div>
-              </li>
-              <li>
-                <button id="dropStatus" data-dropdown-toggle="dropdownNavbar1" class="flex items-center justify-between w-full py-2 px-3 font-semibold bg-clip-text bg-gradient-to-r text-transparent from-sky-400 to-blue-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
-                  HTML Status 
-                  <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                  </svg>
-                </button>
-                <!-- Dropdown menu -->
-                <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                    <ul class="py-2 text-sm bg-gray-900 text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                      <li>
-                        <button 
-                        id="defaultEl" 
-                        class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Default
-                        </button>
-                      </li>
-                      <li>
-                        <button 
-                        id="activeEl" 
-                        class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Active
-                        </button>
-                      </li>
-                      <li>
-                        <button 
-                        id="focusEl" 
-                        class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Focus
-                        </button>
-                      </li>
-                      <li>
-                        <button 
-                        id="hoverEl" 
-                        class="block text-white px-4 py-2 hover:bg-gray-500 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Hover
-                        </button>
-                      </li>
-                      <li>
-                        <button 
-                        id="visitedEl" 
-                        class="block text-white px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                        Visited
-                        </button>
-                      </li>
-                    </ul>
-                </div>
-              </li>
-              <li>
-                <a href="#" class="block py-2 px-3 text-black rounded md:bg-transparent md:text-white md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
-                  Generador
-                </a>
-              </li>
-              <li>
-                <a href="/designia.html" class="block py-2 px-3 text-lime-400 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                  AI Design
-                </a>
-              </li>
-              <li>
-                <a href="/biblio.html" class="block py-2 px-3 text-lime-400 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                  Galería
-                </a>
-              </li>
-            </ul>
+              </div>
+          </nav>
+        </header>
+
+        <main class="flex flex-col w-full h-full justify-center content-center gap-6 mt-[86px] mb-[76px] bg-zinc-100 dark:bg-slate-900">
+
+          <div class="flex flex-wrap m-2 gap-4 justify-center border border-teal-500 rounded-2xl bg-slate-100 dark:bg-slate-900">
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="element" class="text-center text-sky-600 dark:text-sky-500 text-sm font-semibold">HTML Element</label>
+                <select 
+                name="element" 
+                id="element" 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+                  <option value="button">Button</option>
+                  <option value="a">a</option>
+                  <option value="div">Div</option>
+                  <option value="img">Img</option>
+                  <option value="p">p</option>
+                  <option value="span">Span</option>
+                  <option value="h1">H1</option>
+                  <option value="h2">H2</option>
+                  <option value="h3">H3</option>
+                  <option value="input">Input</option>
+                  <option value="file">File</option>
+                  <option value="number">Number</option>
+                  <option value="label">Label</option>
+                  <option value="select">Select</option>
+                  <option value="textarea">Textarea</option>
+                  <option value="checkbox">Checkbox</option>
+                  <option value="radio">Radio</option>
+                </select>
+              </div>
+            </section>
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="status" class="text-center text-sky-600 dark:text-sky-500 text-sm font-semibold">HTML Status</label>
+                <select 
+                name="status" 
+                id="status" 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+                  <option value="default">Default</option>
+                  <option value="active">Active</option>
+                  <option value="focus">Focus</option>
+                  <option value="hover">Hover</option>
+                  <option value="visited">Visited</option>
+                </select>
+              </div>
+            </section>
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="theme" class= "text-center text-sky-600 text-sm font-semibold dark:text-sky-500">Theme</label>
+                <select 
+                name="theme" 
+                id="theme_select" 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+                >
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                </select>
+              </div>
+            </section>
           </div>
-        </div>
-      </nav>
-      
-      <button id="theme" class="fixed right-0 bottom-[80px] py-2 px-3">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-up" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-          <path d="M12 5l0 -2" />
-          <path d="M17 7l1.4 -1.4" />
-          <path d="M19 12l2 0" />
-          <path d="M17 17l1.4 1.4" />
-          <path d="M12 19l0 2" />
-          <path d="M7 17l-1.4 1.4" />
-          <path d="M6 12l-2 0" />
-          <path d="M7 7l-1.4 -1.4" />
-        </svg>
-      </button>
-
-    </header>
-
-    <main class="flex flex-col w-100 h-100 justify-center content-center gap-6 p-4 mt-[76px] mb-[76px]">
-
-      <div class="flex flex-wrap gap-4 justify-center border rounded-2xl p-4 bg-slate-900">
-        
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="weights" class="text-center">Font Weight</label>
-            <select name="weights" id="weights"></select>
-          </div>
-        </section>  
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="fontsize" class="text-center">Font Size</label>
-            <select name="fontsize" id="font"></select>
-          </div>
-        </section>
-        
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="colors" class="text-center">Text Color</label>
-            <select name="colors" id="colores"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="decoration" class="text-center">Text Decoration</label>
-            <select name="decoration" id="decoration"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="styles" class="text-center">Decoration Style</label>
-            <select name="styles" id="styles"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="thickness" class="text-center">Decoration Thickness</label>
-            <select name="thickness" id="thickness"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="text_aligns" class="text-center">Text Align</label>
-            <select name="text_aligns" id="text_align"></select>
-          </div>
-        </section>
-        
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="bg" class= "text-center">Background Color</label>
-            <select name="bg" id="bg"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="padding" class= "text-center">Padding</label>
-            <select name="padding" id="padding"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="widths" class= "text-center">Width</label>
-            <select name="widths" id="widths"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="heights" class= "text-center">Height</label>
-            <select name="heights" id="heights"></select>
-          </div>
-        </section>
-        
-      </div>
-      
-      <div class="flex flex-wrap gap-4 justify-center border rounded-2xl p-4 bg-slate-900">
-        
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="cursors" class="text-center">Cursor</label>
-            <select name="cursors" id="cursors"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="opacitys" class="text-center">Opacity</label>
-            <select name="opacitys" id="opacitys"></select>
-          </div>
-        </section>
-        
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="border_width" class="text-center">Border Width</label>
-            <select name="border_width" id="brd-w"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="border_color" class="text-center">Border Color</label>
-            <select name="border_color" id="brd-c"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="border_radius" class="text-center">Border Radius</label>
-            <select name="border_radius" id="brd-r"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="border_style" class="text-center">Border Style</label>
-            <select name="border_style" id="brd-s"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="border_opacity" class="text-center">Border Opacity</label>
-            <select name="border_opacity" id="brd-o"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="outlines" class="text-center">Outline Color</label>
-            <select name="outlines" id="outlines"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="outwidhts" class="text-center">Outline Width</label>
-            <select name="outwidhts" id="outwidhts"></select>
-          </div>
-        </section>
-
-      </div>
-
-      <div class="flex flex-wrap gap-4 justify-center border rounded-2xl p-4 bg-slate-900">
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="shadowColors" class= "text-center">Shadow Colors</label>
-            <select name="shadowColors" id="shadowColors"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="shadows" class= "text-center">Box Shadow</label>
-            <select name="shadows" id="shadow"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="scales" class= "text-center">Scale</label>
-            <select name="scales" id="scales"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="rotates" class= "text-center">Rotate</label>
-            <select name="rotates" id="rotates"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="translates" class= "text-center">Translates</label>
-            <select name="translates" id="translates"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="brightness" class= "text-center">Brightness</label>
-            <select name="brightness" id="brightness"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="contrasts" class= "text-center">Contrast</label>
-            <select name="contrasts" id="contrasts"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="blurs" class= "text-center">Blur</label>
-            <select name="blurs" id="blurs"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="backdropBlurs" class= "text-center">Backdrop Blur</label>
-            <select name="backdropBlurs" id="backdropBlurs"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="hues" class= "text-center">Hue Rotate</label>
-            <select name="hues" id="hues"></select>
-          </div>
-        </section>
-
-      </div>
-
-      <div class="flex flex-wrap gap-4 justify-center border rounded-2xl p-4 bg-slate-900">
-        
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="clips" class= "text-center">Background Clip</label>
-            <select name="clips" id="clips"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="bimages" class= "text-center">Background Image</label>
-            <select name="bimages" id="bimages"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="froms" class= "text-center">From-Color</label>
-            <select name="froms" id="froms"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="vias" class= "text-center">Via-Color</label>
-            <select name="vias" id="vias"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="tos" class= "text-center">To-Color</label>
-            <select name="tos" id="tos"></select>
-          </div>
-        </section>
-        
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="durations" class= "text-center">Transition Duration</label>
-            <select name="durations" id="duration"></select>
-          </div>
-        </section>
-        
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="timings" class= "text-center">Timing Function</label>
-            <select name="timings" id="timings"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="delays" class= "text-center">Transition Delay</label>
-            <select name="delays" id="delays"></select>
-          </div>
-        </section>
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="animations" class= "text-center">Animation</label>
-            <select name="animations" id="animations"></select>
-          </div>
-        </section>
-
-        
-
-        <section class="flex justify-center content-center">
-          <div class="flex flex-col gap-2 p-2">
-            <label for="theme" class= "text-center">Theme</label>
-            <select name="theme" id="theme_select">
-              <option value="none">None</option>
-              <option value="dark">Dark</option>
-              <option value="light">Light</option>
-            </select>
-          </div>
-        </section>
-
-      </div>
-
-      <div class="flex justify-center content-center gap-4">
-        <p id="warningState" class="text-xs font-bold text-orange-600 border-2 p-2 rounded-2xl hidden"></p>
-        <p id="warningTheme" class="text-xs font-bold text-yellow-600 border-2 p-2 rounded-2xl hidden"></p>
-      </div>
-
-      <div class="flex justify-center content-center h-full w-full">
-        <iframe id="iframe" src="./preview.html" frameborder="0"></iframe>
-      </div>
-      <div class="flex justify-center w-100 bg-slate-600 p-4 gap-4 rounded-2xl border-2">
-        <div>
-          <a href="gallerySave.html" id="save" class="bg-sky-700 text-lime-50 font-bold border-sky-500 animate-pulse p-2 rounded-xl border-2 hover:animate-none hidden">Guardar</a>
-        </div>
-        <code id="code" class="text-white select-all"></code>
-      </div>
-      
-      <div id="rendered" class="flex justify-center content-center">
-        <button id="boton">Copy code</span></button>
-        <span id="tooltip" class="text-xs opacity-0 absolute text-lime-600 hidden">Copied to clipboard</span>
-      </div>
-    </main>
-    <footer class='w-full bg-gray-900 text-white text-center p-4 mb-8'>
-      <header>
-        JaWeB Components
-      </header> 
-      <section class="mt-4 text-left">
-        <p>¿Estás en búsqueda de una manera eficiente y personalizable de crear componentes para tu sitio web? ¡No busques más! Te presentamos una plataforma revolucionaria que te permite <span class="font-semibold text-lime-600">generar elementos HTML usando Tailwind CSS </span> de una manera intuitiva y completamente personalizable. Nuestro generador te ofrece la libertad de seleccionar el tipo de elemento HTML que necesitas, así como su estado (como activo, hover, deshabilitado, etc.), y aplicar las reglas CSS específicas que deseas.
-
-          Con solo unos pocos clics, puedes diseñar botones, tarjetas, formularios y mucho más con la facilidad y la flexibilidad que ofrece Tailwind CSS. Esta herramienta es ideal tanto para desarrolladores experimentados como para principiantes que buscan agilizar su flujo de trabajo y mejorar la consistencia de su diseño sin sacrificar la calidad ni la personalización.
           
-          Ya sea que estés trabajando en un proyecto personal o desarrollando a gran escala, nuestra plataforma se adapta a tus necesidades ofreciéndote una forma optimizada de crear componentes visualmente atractivos y responsivos. ¡Prueba hoy mismo nuestro generador y lleva tus proyectos web al siguiente nivel!</p>
-      </section>  
-      <h1 class="text-center text-3xl font-semibold text-[#09f] dark:text-white mt-4">
-        info@jaweb.es
-      </h1>
-    </footer>
-    
+          <div class="flex flex-wrap m-2 gap-4 justify-center border rounded-2xl p-4 bg-zinc-50 dark:bg-slate-900">
+            
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="weights" class="text-center text-sm font-semibold dark:text-white">Font Weight</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="weights" 
+                id="weights">
+              </select>
+              </div>
+            </section>  
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="fontsize" class="text-center text-sm font-semibold dark:text-white">Font Size</label>
+                <select 
+                name="fontsize" 
+                id="font" 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+            
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="colors" class="text-center text-sm font-semibold dark:text-white">Text Color</label>
+                <select 
+                name="colors" 
+                id="colores"
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="decoration" class="text-center text-sm font-semibold dark:text-white">Text Decoration</label>
+                <select 
+                name="decoration" 
+                id="decoration"
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center dark:text-white">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="styles" class="text-center text-sm font-semibold">Decoration Style</label>
+                <select 
+                name="styles" 
+                id="styles"
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="thickness" class="text-center text-sm font-semibold dark:text-white">Decoration Thickness</label>
+                <select 
+                name="thickness" 
+                id="thickness"
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="text_aligns" class="text-center text-sm font-semibold dark:text-white">Text Align</label>
+                <select 
+                name="text_aligns" 
+                id="text_align"
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+            
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="bg" class= "text-center text-sm font-semibold dark:text-white">Background Color</label>
+                <select 
+                name="bg" 
+                id="bg"
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="padding" class= "text-center text-sm font-semibold dark:text-white">Padding</label>
+                <select 
+                name="padding" 
+                id="padding"
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="widths" class= "text-center text-sm font-semibold dark:text-white">Width</label>
+                <select 
+                name="widths" 
+                id="widths"
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="heights" class= "text-center text-sm font-semibold dark:text-white">Height</label>
+                <select 
+                name="heights" 
+                id="heights"
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white">
+              </select>
+              </div>
+            </section>
+            
+          </div>
+          
+          <div class="flex flex-wrap m-2 gap-4 justify-center border rounded-2xl p-4 bg-zinc-50 dark:bg-slate-900">
+            
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="cursors" class="text-center text-sm font-semibold dark:text-white">Cursor</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="cursors" 
+                id="cursors"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="opacitys" class="text-center text-sm font-semibold dark:text-white">Opacity</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="opacitys" 
+                id="opacitys"></select>
+              </div>
+            </section>
+            
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="border_width" class="text-center text-sm font-semibold dark:text-white">Border Width</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="border_width" 
+                id="brd-w"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="border_color" class="text-center text-sm font-semibold dark:text-white">Border Color</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="border_color" 
+                id="brd-c"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="border_radius" class="text-center text-sm font-semibold dark:text-white">Border Radius</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="border_radius" 
+                id="brd-r"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="border_style" class="text-center text-sm font-semibold dark:text-white">Border Style</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="border_style" 
+                id="brd-s"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="border_opacity" class="text-center text-sm font-semibold dark:text-white">Border Opacity</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="border_opacity" 
+                id="brd-o"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="outlines" class="text-center text-sm font-semibold dark:text-white">Outline Color</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="outlines" 
+                id="outlines"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="outwidhts" class="text-center text-sm font-semibold dark:text-white">Outline Width</label>
+                <select 
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="outwidhts" 
+                id="outwidhts"></select>
+              </div>
+            </section>
+
+          </div>
+
+          <div class="flex flex-wrap gap-4 m-2 justify-center border rounded-2xl p-4 bg-zinc-50 dark:bg-slate-900">
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="shadowColors" class= "text-center text-sm font-semibold dark:text-white">Shadow Colors</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="shadowColors" 
+                id="shadowColors"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="shadows" class= "text-center text-sm font-semibold dark:text-white">Box Shadow</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="shadows" 
+                id="shadow"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="scales" class= "text-center text-sm font-semibold dark:text-white">Scale</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="scales" 
+                id="scales"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="rotates" class= "text-center text-sm font-semibold dark:text-white">Rotate</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="rotates" 
+                id="rotates"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="translates" class= "text-center text-sm font-semibold dark:text-white">Translates</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="translates" 
+                id="translates"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="brightness" class= "text-center text-sm font-semibold dark:text-white">Brightness</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="brightness" 
+                id="brightness"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="contrasts" class= "text-center text-sm font-semibold dark:text-white">Contrast</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="contrasts" 
+                id="contrasts"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="blurs" class= "text-center text-sm font-semibold dark:text-white">Blur</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="blurs" 
+                id="blurs"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="backdropBlurs" class= "text-center text-sm font-semibold dark:text-white">Backdrop Blur</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="backdropBlurs" 
+                id="backdropBlurs"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="hues" class= "text-center text-sm font-semibold dark:text-white">Hue Rotate</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="hues" 
+                id="hues"></select>
+              </div>
+            </section>
+
+          </div>
+
+          <div class="flex flex-wrap gap-4 m-2 justify-center border rounded-2xl p-4 bg-zinc-50 dark:bg-slate-900">
+            
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="clips" class= "text-center text-sm font-semibold dark:text-white">Background Clip</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="clips" 
+                id="clips"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="bimages" class= "text-center text-sm font-semibold dark:text-white">Background Image</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="bimages" 
+                id="bimages"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="froms" class= "text-center text-sm font-semibold dark:text-white">From-Color</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="froms" 
+                id="froms"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="vias" class= "text-center text-sm font-semibold dark:text-white">Via-Color</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="vias" 
+                id="vias"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="tos" class= "text-center text-sm font-semibold dark:text-white">To-Color</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="tos" 
+                id="tos"></select>
+              </div>
+            </section>
+            
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="durations" class= "text-center text-sm font-semibold dark:text-white">Transition Duration</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="durations" 
+                id="duration"></select>
+              </div>
+            </section>
+            
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="timings" class= "text-center text-sm font-semibold dark:text-white">Timing Function</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="timings" 
+                id="timings"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="delays" class= "text-center text-sm font-semibold dark:text-white">Transition Delay</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="delays" 
+                id="delays"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="animations" class= "text-center text-sm font-semibold dark:text-white">Animation</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="animations" 
+                id="animations"></select>
+              </div>
+            </section>
+
+            <section class="flex justify-center content-center">
+              <div class="flex flex-col gap-2 p-2">
+                <label for="theme" class= "text-center text-sm font-semibold dark:text-white">Theme</label>
+                <select
+                class="p-2 text-sm font-medium rounded-xl border-2 border-zinc-300 bg-zinc-100 dark:bg-slate-600 dark:border-zinc-700 dark:text-white"
+                name="theme" 
+                id="theme_select">
+                  <option value="none">None</option>
+                  <option value="dark">Dark</option>
+                  <option value="light">Light</option>
+                </select>
+              </div>
+            </section>
+
+          </div>
+
+          <div class="flex justify-center content-center gap-4 bg-zinc-50 dark:bg-slate-900">
+            <p id="warningState" class="text-xs font-bold text-orange-600 border-2 p-2 rounded-2xl hidden"></p>
+            <p id="warningTheme" class="text-xs font-bold text-yellow-600 border-2 p-2 rounded-2xl hidden"></p>
+          </div>
+
+          <div class="flex justify-center content-center h-full w-full bg-zinc-50 dark:bg-zinc-900">
+            <iframe id="iframe" class="w-full" src="./preview.html" frameborder="0"></iframe>
+          </div>
+          <div class="flex justify-center m-2 bg-slate-200 dark:bg-slate-600 p-4 gap-4 rounded-2xl border-2">
+            <code id="code" class="select-all text-black dark:text-white font-semibold"></code>
+            <span id="tooltip" class="text-xs opacity-0 absolute text-lime-600 font-semibold hidden">Copied to clipboard</span>
+          </div>
+          <div class="flex justify-center content-center gap-4 bg-zinc-50 dark:bg-slate-900 m-2">
+            <button 
+            disabled
+            href="gallerySave.html" 
+            id="save" 
+            class="disabled:bg-zinc-500 disabled:border-zinc-500 disabled:cursor-not-allowed bg-sky-700 p-2 text-lime-50 font-bold border-sky-500 rounded-xl border-2 hover:bg-sky-800">
+            Guardar
+            </button>
+          </div>
+
+        </main>
+        <footer class='w-full dark:bg-gray-900 bg-zinc-50 text-black dark:text-white text-center p-4 mb-8'>
+          <header>
+            JaWeB Components
+          </header> 
+          <section class="mt-4 text-left">
+            <p>¿Estás en búsqueda de una manera eficiente y personalizable de crear componentes para tu sitio web? ¡No busques más! Te presentamos una plataforma revolucionaria que te permite <span class="font-semibold text-lime-600">generar elementos HTML usando Tailwind CSS </span> de una manera intuitiva y completamente personalizable. Nuestro generador te ofrece la libertad de seleccionar el tipo de elemento HTML que necesitas, así como su estado (como activo, hover, deshabilitado, etc.), y aplicar las reglas CSS específicas que deseas.
+
+              Con solo unos pocos clics, puedes diseñar botones, tarjetas, formularios y mucho más con la facilidad y la flexibilidad que ofrece Tailwind CSS. Esta herramienta es ideal tanto para desarrolladores experimentados como para principiantes que buscan agilizar su flujo de trabajo y mejorar la consistencia de su diseño sin sacrificar la calidad ni la personalización.
+              
+              Ya sea que estés trabajando en un proyecto personal o desarrollando a gran escala, nuestra plataforma se adapta a tus necesidades ofreciéndote una forma optimizada de crear componentes visualmente atractivos y responsivos. ¡Prueba hoy mismo nuestro generador y lleva tus proyectos web al siguiente nivel!</p>
+          </section>  
+          <h1 class="text-center text-xl font-semibold text-[#09f] dark:text-white mt-4">
+            info@jaweb.es
+          </h1>
+        </footer>
+    </div>
+    <div class="hidden"><button id="prev_class" class=""></button></div>
     <script type="module" src="/main.js"></script>
     <script type="module" src="/menu.js"></script>
   </body>
