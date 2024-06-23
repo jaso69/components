@@ -1,36 +1,63 @@
-const email = document.querySelector('#email');
-const password = document.querySelector('#password');
-const nombre = document.querySelector('#nombre');
-const submit = document.querySelector('#submit');
-const errorState = document.querySelector('#errorState');
-const password1 = document.querySelector('#password1');
+const $ = (e) => document.querySelector(e);
+const email = $('#email');
+const password = $('#password');
+const nombre = $('#nombre');
+const submit = $('#submit');
+const errorState = $('#errorState');
+const password1 = $('#password1');
+let compOk = false;
+
+submit.style.display = 'none';
 
 email.addEventListener('input', e => {
-  const emailValue = email.value;
-  if (emailValue.length > 0 && esCorreoValido(emailValue)) {
-    email.classList.remove('border-red-500');
-  } else {
-    email.classList.add('border-red-500');
+  email.style.borderColor = 'red';
+  if (esCorreoValido(e.target.value)) {
+    email.style.borderColor = '';
   }
+  camposOk();
 });
 
 password.addEventListener('input', e => {
-  const passwordValue = password.value;
-  if (passwordValue.length > 4) {
-    password.classList.remove('border-red-500');
-  } else {
-    password.classList.add('border-red-500');
+  password.style.borderColor = 'red';
+  if (e.target.value.length > 5) {
+    password.style.borderColor = '';
   }
+  camposOk();
+});
+
+password1.addEventListener('input', e => {
+  password1.style.borderColor = 'red';
+  if (e.target.value.length > 5 && password.value === password1.value) {
+    password1.style.borderColor = '';
+  }
+  camposOk();
 });
 
 nombre.addEventListener('input', e => {
-  const nombref = nombre.value;
-  if (nombref.length > 2) {
-    nombre.classList.remove('border-red-500');
-  } else {
-    nombre.classList.add('border-red-500');
+  nombre.style.borderColor = 'red';
+  if (e.target.value.length > 2) {
+    nombre.style.borderColor = '';
   }
+  camposOk();
 });
+
+function camposOk() {
+  if (!esCorreoValido(email.value) || password.value.length < 5 || nombre.value.length < 2) 
+    {
+      submit.style.display = 'none';
+      compOk = false;
+      return;
+    }
+  if(password1.value !== password.value) {
+    password1.style.borderColor = 'red';
+    submit.style.display = 'none';
+    compOk = false;
+    return;
+  }
+  submit.style.display = 'block';
+  compOk = true;
+
+}
 
 function esCorreoValido(correo) {
   const patron = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -39,13 +66,9 @@ function esCorreoValido(correo) {
 
 submit.addEventListener('click', e => {
   e.preventDefault();
-  if(password1.value !== password.value) {
-    password1.classList.add('border-red-500');
-    return;
-  }
-  if(!esCorreoValido(email.value) || password.value.length < 4 || nombre.value.length < 1) { 
-    errorState.classList.remove('hidden');
-    return; }
+  camposOk();
+  if (!compOk) { return; }
+
   const emailValue = email.value;
   const passwordValue = password.value;
   const nameValue = nombre.value;
@@ -60,8 +83,7 @@ submit.addEventListener('click', e => {
     .then(res => res.json())
     .then(res => {
       if (res.msg === 'success') {
-        localStorage.setItem('user', JSON.stringify(res.user));
-        window.location.href = 'biblio.html';
+        window.location.href = '/login.html';
       } else {
         email.classList.add('border-red-500');
         password.classList.add('border-red-500');

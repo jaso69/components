@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="index,follow" name="robots">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://jaweb.es/designia.html" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <meta name="description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. utilizando inteligencia artificial!">
@@ -19,7 +20,7 @@
     <meta name="twitter:title" content="Generador de Elementos HTML con Tailwind CSS - JaWeb">
     <meta name="twitter:description" content="Genera fácilmente elementos HTML personalizados utilizando Tailwind CSS en JaWeb. Seleccione el elemento, su estado y aplique las reglas CSS a su gusto, optimizando sus proyectos web de manera eficaz y rápida.">
     <meta name="twitter:image" content="https://jaweb.es/image.png">
-    <meta name="author" content="@joseonieva2"><meta name="author" content="@joseonieva2">
+    <meta name="author" content="@joseonieva2">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -71,19 +72,23 @@
                           Generador IA
                           </a>
                       </li>
-                      <li>
-                          <button  class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                      <li id="menuGallery">
+                          <a 
+                          href="/gallery.html"  
+                          class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                          >
                           Galeria
-                          </button>
+                          </a>
                       </li>
-                      <li>
+                      <li id="menuLogout">
                           <button 
+                          id="logout"
                           class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                           >
                           Logout
                           </button>
                       </li>
-                      <li>
+                      <li id="menuLogin">
                           <a 
                           href="/login.html" 
                           class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -91,8 +96,8 @@
                           Login
                           </a>
                       </li>
-                      <li>
-                          <a href="/registro" class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                      <li id="menuRegister">
+                          <a href="/register.html" class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                           Registro
                           </a>
                       </li>
@@ -196,7 +201,9 @@
     </footer>
 
   </div>
+  <script src="/menulog.js"></script>
   <script src="theme.js"></script>
   <script type="module" src="/designia.js"></script>
+  <script src="logout.js"></script>
 </body>
 </html>

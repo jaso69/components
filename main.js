@@ -18,7 +18,8 @@ const save = $('#save')
 const darkMode = $('#darkMode')
 const lightMode = $('#lightMode')
 const prev_class = $('#prev_class')
-const user = localStorage.getItem('user')
+let user
+let userid
 let eleHtml;
 let elementSelected
 let htmlSelected 
@@ -27,13 +28,27 @@ let themeSelected
 let selector = ''
 let clase = ''
 
+if(localStorage.getItem('userId') && localStorage.getItem('userNombre')){
+  user = localStorage.getItem('userNombre')
+  userid = localStorage.getItem('userId')
+  save.disabled = false
+}
+
 save.classList.remove('hidden')
 
 const selElhtml = $('#element')
 const selStatus = $('#status')
 const selTheme = $('#theme_select')
 
-document.body.classList.add('dark')
+if(!localStorage.getItem('theme')){
+  document.body.classList.add('dark')
+  localStorage.setItem('theme', 'dark')
+  darkMode.classList.add('hidden')
+  lightMode.classList.remove('hidden')
+  reload()
+} 
+  
+
 searchClass('colors', 'text-white')
 
 function classlistAdd(e){
@@ -101,34 +116,6 @@ selElhtml.addEventListener('change', (e) => {
 
 localStorage.setItem('clase', 'text-white')
 localStorage.setItem('element', 'button')
-
-if(document.body.classList.contains('dark')) {
-  localStorage.setItem('theme', 'dark')
-  darkMode.classList.add('hidden')
-  lightMode.classList.remove('hidden')
-  reload()
-}
-if(!document.body.classList.contains('dark')) {
-  localStorage.setItem('theme', 'light')
-  darkMode.classList.remove('hidden')
-  lightMode.classList.add('hidden')
-  reload()
-}
-
-darkMode.addEventListener('click', () => {
-  localStorage.setItem('theme', 'dark')
-  document.body.classList.add('dark')
-  darkMode.classList.add('hidden')
-  lightMode.classList.remove('hidden')
-  reload()
-})
-lightMode.addEventListener('click', () => {
-  localStorage.setItem('theme', 'light')
-  document.body.classList.remove('dark')
-  darkMode.classList.remove('hidden')
-  lightMode.classList.add('hidden')
-  reload()
-})
 
 co.addEventListener('click', () => {
   const temp = document.createElement('input')
@@ -198,6 +185,7 @@ function searchClass(ele, clase) {
   newEl.classList = prev_class.classList
   newEl.textContent = 'JaWeB Generator'
   eleHtml= newEl.outerHTML
+  localStorage.setItem('html', eleHtml)
   co.textContent = eleHtml
   reload()
 }

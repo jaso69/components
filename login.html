@@ -71,18 +71,21 @@
                                     Generador IA
                                     </a>
                                 </li>
-                                <li>
-                                    <button  class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                                <li id="menuGallery">
+                                    <a 
+                                    href="/gallery.html" 
+                                    class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                    >
                                     Galeria
-                                    </button>
+                                    </a>
                                 </li>
-                                <li>
+                                <li id="menuLogout">
                                     <button 
                                     class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                                     Logout
                                     </button>
                                 </li>
-                                <li>
+                                <li id="menuLogin">
                                     <a 
                                     href="/login.html" 
                                     class="block py-2 px-3 text-sky-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-sky-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -90,8 +93,8 @@
                                     Login
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/registro" class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                                <li id="menuRegister">
+                                    <a href="/register.html" class="block py-2 px-3 text-lime-600 font-bold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                                     Registro
                                     </a>
                                 </li>
@@ -141,7 +144,6 @@
                 <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
                     <div class="flex flex-col items-center justify-center">
                         <div class="flex flex-col items-center justify-center">
-                            <Favicon />
                         </div>
                         <div class="flex flex-col items-center justify-center">
                             <h1 class="text-2xl font-bold text-gray-900 dark:text-white">
@@ -182,10 +184,11 @@
                     </div>
                 </div>
                 <div class="flex justify-center content-center mt-10">
-                <p class="text-xs font-bold text-black dark:text-white border-2 p-2 rounded-2xl">Si no dispones de una cuenta, <RouterLink to="/registro" class="text-sky-400"> Registrate </RouterLink> para poder guardar tus elementos </p>
+                <p class="text-xs font-bold text-black dark:text-white border-2 p-2 rounded-2xl">Si no dispones de una cuenta, <a href="/register.html" class="text-sky-400"> Registrate </a> para poder guardar tus elementos </p>
                 </div>
             </main>
         </div>
+        <script src="/menulog.js"></script>
         <script src="theme.js"></script>
         <script src="login.js" type="module"></script>
     </body>

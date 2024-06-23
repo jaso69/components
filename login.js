@@ -51,7 +51,7 @@ buttonLogin.addEventListener('click', (e) =>
         .then(res => {
         if (res.user) {
             localStorage.setItem('userNombre', res.user.nombre)
-            localStorage.setItem('userId', res.user._id)
+            localStorage.setItem('userId', String( res.user._id))
             window.location.href = '/index.html'
         } else {
             console.log(res)
