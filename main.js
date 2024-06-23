@@ -31,10 +31,10 @@ let clase = ''
 if(localStorage.getItem('userId') && localStorage.getItem('userNombre')){
   user = localStorage.getItem('userNombre')
   userid = localStorage.getItem('userId')
-  save.disabled = false
+  save.classList.remove('hidden')
+} else {
+  save.classList.add('hidden')
 }
-
-save.classList.remove('hidden')
 
 const selElhtml = $('#element')
 const selStatus = $('#status')
@@ -176,7 +176,7 @@ function searchClass(ele, clase) {
     } 
   })
   localStorage.setItem('clase', prev_class.classList)
-  const newEl = document.createElement(localStorage.getItem('element'))
+  const newEl = document.createElement(localStorage.getItem('element').trim())
   if(localStorage.getItem('element') === 'img') {newEl.src = './img.avif'}
   if(localStorage.getItem('element') === 'input' && localStorage.getItem('type') === 'radio') { newEl.type = 'radio' }
   if(localStorage.getItem('element') === 'input' && localStorage.getItem('type') === 'checkbox') { newEl.type = 'checkbox' }

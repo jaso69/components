@@ -1,3 +1,7 @@
+import './flowbite.min.js'
+
+initFlowbite()
+
 const $ = (e) => document.querySelector(e);
 const email = $('#email');
 const password = $('#password');

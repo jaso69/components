@@ -14,6 +14,12 @@ let prompt = {}
 let question = ''
 let message = []
 let url;
+let userid
+
+if(localStorage.getItem('userId') && localStorage.getItem('userNombre')){
+    userid = localStorage.getItem('userId')
+    console.log(userid)
+}
 
 boton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -31,7 +37,7 @@ boton.addEventListener('click', (event) => {
 
 const respuesta = (resp) => {
     message.push({question : resp})
-    localStorage.setItem('gallery', resp.message)
+    localStorage.setItem('html', resp.message)
     let caracter
     if(resp.message.includes('"')){
         caracter = '"'
@@ -54,6 +60,7 @@ const respuesta = (resp) => {
         code.textContent = resp.message
         divCode.classList.remove('hidden')
         codeBoton.classList.remove('hidden')
+        if(userid) save.classList.remove('hidden')
     } else {
         codeBoton.innerHTML = 'We regret that we are unable to respond at this time, please try again in a few minutes.'
     }
